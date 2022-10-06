@@ -116,6 +116,10 @@ footer .nav-header li{
     text-align: center;
 }
 
+.copyright svg{
+    fill:white;
+}
+
 svg{
     width: 2rem;
     fill: rgb(0, 0, 0);
