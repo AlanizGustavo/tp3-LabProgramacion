@@ -15,6 +15,10 @@ header {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+main{
+    height: 100vh;
+}
+
 .nav-header {
     display: flex;
     flex-wrap: wrap;
@@ -41,7 +45,7 @@ header {
     margin: 1rem;
     font-size: 2rem;
     font-weight: 700;
-    color: #d41e3b;
+    width: 30rem;
 }
 
 
@@ -56,13 +60,13 @@ header {
     background-color: #ffffff;
     padding: 1rem 2rem;
     border-radius: 10px;
-}
-
-.nav-header ul li a {
-    text-decoration: none;
-    color: #000;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }
 
 .nav-header ul li:hover {
@@ -82,3 +86,33 @@ header {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }   
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #000;
+    color: white;
+}
+
+footer .nav-header li{
+    padding: 1rem 4rem;
+}
+
+.contacto{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.copyright{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+svg{
+    width: 2rem;
+    fill: rgb(254, 254, 254);
+}
+
