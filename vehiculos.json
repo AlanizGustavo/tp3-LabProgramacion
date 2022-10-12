@@ -1,0 +1,83 @@
+[
+    {
+        "foto":"../assets/img/DSCN4781.JPG",
+        "marca": "Renault",
+        "modelo": "Torino",
+        "color": "Rojo",
+        "ano": 1980,
+        "piloto": "Piloto 1",
+        "copiloto": "Copiloto 1"
+    },
+    {
+        "foto":"../assets/img/DSCN4778.JPG",
+        "marca": "Peugeot",
+        "modelo": "404",
+        "color": "Marron",
+        "ano": 1975,
+        "piloto": "Piloto 2",
+        "copiloto": "Copiloto 2"
+    },
+    {
+        "foto":"../assets/img/DSCN4783.JPG",
+        "marca": "Chevrolet",
+        "modelo": "Corvette",
+        "color": "Amarrillo",
+        "ano": 1965,
+        "piloto": "Piloto 3",
+        "copiloto": "Copiloto 3"
+    },
+    {
+        "foto":"../assets/img/DSCN4785.JPG",
+        "marca": "Ford",
+        "modelo": "Mustang",
+        "color": "Azul",
+        "ano": 1968,
+        "piloto": "Piloto 4",
+        "copiloto": "Copiloto 4"
+    },
+    {
+        "foto":"../assets/img/DSCN4794.JPG",
+        "marca": "Citroen",
+        "modelo": "2CV",
+        "color": "Verde",
+        "ano": 1960,
+        "piloto": "Piloto 5",
+        "copiloto": "Copiloto 5"
+    },
+    {
+        "foto":"../assets/img/DSCN4788.JPG",
+        "marca": "Fiat",
+        "modelo": "600",
+        "color": "Blanco",
+        "ano": 1960,
+        "piloto": "Piloto 6",
+        "copiloto": "Copiloto 6"
+    },
+    {
+        "foto":"../assets/img/DSCN6953.JPG",
+        "marca": "Renault",
+        "modelo": "Torino",
+        "color": "Rojo",
+        "ano": 1980,
+        "piloto": "Piloto 7",
+        "copiloto": "Copiloto 7"
+    },
+    {
+        "foto":"../assets/img/DSCN6954.JPG",
+        "marca": "Skoda",
+        "modelo": "Favorit",
+        "color": "Gris",
+        "ano": 1980,
+        "piloto": "Piloto 8",
+        "copiloto": "Copiloto 8"
+    },
+    {
+        "foto":"../assets/img/DSCN6958.JPG",
+        "marca": "BMW",
+        "modelo": "M4",
+        "color": "Negro",
+        "ano": 1985,
+        "piloto": "Piloto 9",
+        "copiloto": "Copiloto 9"
+    }
+]
