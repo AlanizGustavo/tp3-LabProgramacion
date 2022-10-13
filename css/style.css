@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +10,13 @@ html {
     font-size: 62.5%;
 }
 
-main{
+main {
     justify-content: center;
 }
 
 header {
     position: fixed;
-    top:0;
+    top: 0;
     display: flex;
     width: 100%;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -22,7 +24,7 @@ header {
     z-index: 1;
 }
 
-.titulo{
+.titulo {
     margin-top: 19rem;
     margin-bottom: 5rem;
     display: flex;
@@ -53,9 +55,10 @@ header {
 
 .logo p {
     width: 30rem;
+    font-family: 'Oswald', sans-serif;
     margin: 1rem;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 100;
     width: 30rem;
 }
 
@@ -71,11 +74,12 @@ header {
     background-color: #ffffff;
     padding: 1rem 2rem;
     border-radius: 10px;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 100;
+    font-family: 'Oswald', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     color: #000;
 }
@@ -85,25 +89,57 @@ a{
     animation: sacudir 0.5s;
 }
 
-.nav-header ul li:hover svg{
+.nav-header ul li:hover svg {
     fill: white;
 }
 
 @keyframes sacudir {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}   
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
 
-footer{
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+footer {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -113,31 +149,31 @@ footer{
     color: white;
 }
 
-footer .nav-header li{
+footer .nav-header li {
     padding: 1rem 4rem;
 }
 
-.contacto{
+.contacto {
     font-size: 1.5rem;
     text-align: center;
 }
 
-.copyright{
+.copyright {
     font-size: 1.5rem;
     text-align: center;
 }
 
-.copyright svg{
-    fill:white;
+.copyright svg {
+    fill: white;
 }
 
-svg{
+svg {
     width: 3rem;
     fill: rgb(0, 0, 0);
 }
 
-.grid{
-    margin:0 0% 10% 0%;
+.grid {
+    margin: 0 0% 10% 0%;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -145,7 +181,7 @@ svg{
     padding: 1rem 25rem;
 }
 
-.card{
+.card {
     overflow: hidden;
     height: 45rem;
     width: 35rem;
@@ -155,30 +191,65 @@ svg{
     transition: 5s;
 }
 
-.contenedorImagen{
+.contenedorImagen {
     overflow: hidden;
     width: 100%;
     height: 100%;
 }
 
-.nombre{
+.nombre {
     padding: 1rem;
     margin: auto;
     text-align: center;
     background-color: white;
     font-family: 'Arial', cursive;
-    font-size: 2rem;  
-} 
+    font-size: 2rem;
+}
 
-.img{
+.img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: transform .5s, filter 1.5s ease-in-out;
-    filter: grayscale(100%);    
+    filter: grayscale(100%);
 }
 
-.img:hover{
+.img:hover {
     transform: scale(1.2);
     filter: grayscale(0);
+}
+
+.imagen-fondo {
+    width: 100%;
+    height: auto;
+}
+
+.seccion-principal {
+    position: relative;
+}
+
+.texto-club {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.view-more {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    font-size: 2rem;
+    border: 2px solid white;
+    font-weight: 100;
+    text-align: center;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
