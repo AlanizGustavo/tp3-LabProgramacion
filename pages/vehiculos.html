@@ -28,9 +28,12 @@
             <div class="titulo">
                 <h1>Pilotos de CAACEP</h1>
             </div>
-            <section id="grid" class="grid">
-                
-            </section>
+            <form class="filtros" action="vehiculos.js" name="filtro" method="get">
+                <input class="textField" id="nombre" type="text" placeholder="Nombre" name="nombre">
+                <input class="botonFiltro" type="submit" value="Filtrar">
+                <input class="botonFiltro" type="reset" value="Resetear">
+            </form>
+            <section id="grid" class="grid"></section>
         </main>
         <footer>
             <div class="logo">
