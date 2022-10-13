@@ -163,10 +163,6 @@ footer .nav-header li {
     text-align: center;
 }
 
-.copyright svg {
-    fill: white;
-}
-
 svg {
     width: 3rem;
     fill: rgb(0, 0, 0);
