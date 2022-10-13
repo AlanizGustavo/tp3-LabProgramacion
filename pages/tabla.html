@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css">
-        <title>CAACEP</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <title>CAACEP - Posiciones</title>
     </head>
 
     <body>
         <header>
             <nav class="nav-header">
                 <div class="logo">
-                    <a href="index.html"> <img src="assets/img/Logo_caacep.png" alt="Logo CAACEP"> </a>
-                    <p>Club de Automoviles Antiguos<br>Clasicos y Especiales de la Patagonia</p>
+                    <a href="../index.html"> <img src="../assets/img/Logo_caacep.png" alt="Logo CAACEP"> </a>
+                    <p>Club de Automoviles Antiguos, Clasicos y Especiales de la Patagonia</p>
                 </div>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="./pages/vehiculos.html">Pilotos</a></li>
-                    <li><a href="./pages/tabla.html">Tabla</a></li>
-                    <li><a href="./pages/media.html">Media</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="vehiculos.html">Pilotos</a></li>
+                    <li><a href="tabla.html">Tabla</a></li>
+                    <li><a href="media.html">Media</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <section class="seccion-principal">
-                <div class="texto-club">
-                    <h1>Club de Automoviles <br>CAACEP</h1>
-                    <button>
-                        <a href="./pages/vehiculos.html">Ver Vehiculos</a>
-                    </button>
-                </div>
-                <img class="imagen-fondo" src="assets/img/autoEnRuta.JPG" alt="Auto viajando">
+            <div class="titulo">
+                <h1>Tabla de posiciones</h1>
+            </div>
+            <section id="grid" class="grid">
+
             </section>
         </main>
         <footer>
             <div class="logo">
-                <a href="#"><img src="./assets/img/Logo_caacep.png" alt="Logo CAACEP"></a>
+                <a href="#"><img src="../assets/img/Logo_caacep.png" alt="Logo CAACEP"></a>
                 <p>Club de Automoviles Antiguos, Clasicos y Especiales de la Patagonia</p>
             </div>
             <div class="contacto">
@@ -70,6 +67,7 @@
             </div>
             <p class="copyright">&copy; 2022 CAACEP, todos los derechos reservados</p>
         </footer>
+        <script type="module" src="../posiciones.js"></script>
     </body>
 
 </html>

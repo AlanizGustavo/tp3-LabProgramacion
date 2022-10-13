@@ -163,10 +163,6 @@ footer .nav-header li {
     text-align: center;
 }
 
-.copyright svg {
-    fill: white;
-}
-
 svg {
     width: 3rem;
     fill: rgb(0, 0, 0);
@@ -197,6 +193,28 @@ svg {
     height: 100%;
 }
 
+.cardTabla {
+    display: flex;
+    height: 70%;
+    width: 35rem;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px #000000;
+    border: solid 5px;
+    transition: 5s;
+}
+
+.cardTabla .contenedorImagen {
+    width: 100%;
+    height: 100%;
+    filter: none;
+}
+
+.cardTabla .contenedorTitulo {
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid gray;
+}
+
 .nombre {
     padding: 1rem;
     margin: auto;
@@ -211,10 +229,13 @@ svg {
     width: 100%;
     object-fit: cover;
     transition: transform .5s, filter 1.5s ease-in-out;
+}
+
+.card .img {
     filter: grayscale(100%);
 }
 
-.img:hover {
+.card .img:hover {
     transform: scale(1.2);
     filter: grayscale(0);
 }
@@ -239,17 +260,28 @@ svg {
     text-align: center;
 }
 
-.view-more {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 1rem 3rem;
-    border-radius: 30px;
+button {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 2rem;
-    border: 2px solid white;
-    font-weight: 100;
-    text-align: center;
+    padding: 2rem;
 }
 
-button {
-    font-family: Arial, Helvetica, sans-serif;
+button a {
     color: white;
+}
+
+@keyframes TyrePrint {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+
 }
