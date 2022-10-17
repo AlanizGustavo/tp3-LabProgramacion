@@ -6,7 +6,8 @@
         "color": "Rojo",
         "ano": 1980,
         "piloto": "Piloto 1",
-        "copiloto": "Copiloto 1"
+        "copiloto": "Copiloto 1",
+        "puntaje": 10
     },
     {
         "foto":"../assets/img/DSCN4778.JPG",
@@ -15,7 +16,8 @@
         "color": "Marron",
         "ano": 1975,
         "piloto": "Piloto 2",
-        "copiloto": "Copiloto 2"
+        "copiloto": "Copiloto 2",
+        "puntaje": 15
     },
     {
         "foto":"../assets/img/DSCN4783.JPG",
@@ -24,7 +26,8 @@
         "color": "Amarrillo",
         "ano": 1965,
         "piloto": "Piloto 3",
-        "copiloto": "Copiloto 3"
+        "copiloto": "Copiloto 3",
+        "puntaje": 30
     },
     {
         "foto":"../assets/img/DSCN4785.JPG",
@@ -33,7 +36,8 @@
         "color": "Azul",
         "ano": 1968,
         "piloto": "Piloto 4",
-        "copiloto": "Copiloto 4"
+        "copiloto": "Copiloto 4",
+        "puntaje": 40
     },
     {
         "foto":"../assets/img/DSCN4794.JPG",
@@ -42,7 +46,8 @@
         "color": "Verde",
         "ano": 1960,
         "piloto": "Piloto 5",
-        "copiloto": "Copiloto 5"
+        "copiloto": "Copiloto 5",
+        "puntaje": 15
     },
     {
         "foto":"../assets/img/DSCN4788.JPG",
@@ -51,7 +56,8 @@
         "color": "Blanco",
         "ano": 1960,
         "piloto": "Piloto 6",
-        "copiloto": "Copiloto 6"
+        "copiloto": "Copiloto 6",
+        "puntaje": 10
     },
     {
         "foto":"../assets/img/DSCN6953.JPG",
@@ -60,7 +66,8 @@
         "color": "Rojo",
         "ano": 1980,
         "piloto": "Piloto 7",
-        "copiloto": "Copiloto 7"
+        "copiloto": "Copiloto 7",
+        "puntaje": 50
     },
     {
         "foto":"../assets/img/DSCN6954.JPG",
@@ -69,7 +76,8 @@
         "color": "Gris",
         "ano": 1980,
         "piloto": "Piloto 8",
-        "copiloto": "Copiloto 8"
+        "copiloto": "Copiloto 8",
+        "puntaje": 20
     },
     {
         "foto":"../assets/img/DSCN6958.JPG",
@@ -78,6 +86,7 @@
         "color": "Negro",
         "ano": 1985,
         "piloto": "Piloto 9",
-        "copiloto": "Copiloto 9"
+        "copiloto": "Copiloto 9",
+        "puntaje": 35
     }
 ]
