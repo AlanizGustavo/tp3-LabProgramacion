@@ -179,7 +179,7 @@ svg {
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem 4rem;
-    padding: 1rem 25rem;
+    padding: 1rem ;
 }
 
 .card {
