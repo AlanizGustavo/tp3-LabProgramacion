@@ -4,10 +4,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --textoNav: #2c3357;
+    --textoNavBackground: #2c3357;
+    --textoNavHover: #4b5fa0;
+    --textoNavHoverBackground: #ecebec;
 }
 
 html {
     font-size: 62.5%;
+    font-family: 'Oswald', sans-serif;
 }
 
 main {
@@ -60,6 +65,11 @@ header {
     font-size: 2rem;
     font-weight: 100;
     width: 30rem;
+
+}
+
+.nav-header .logo p {
+    color: var(--textoNav);
 }
 
 
@@ -79,19 +89,22 @@ header {
     font-family: 'Oswald', sans-serif;
 }
 
-a {
+.nav-header a {
     text-decoration: none;
-    color: #000;
+    color: var(--textoNav);
 }
 
+
 .nav-header ul li:hover {
-    background-color: #FF385C;
+    background-color: var(--textoNavHover);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     animation: sacudir 0.5s;
 }
 
-.nav-header ul li:hover svg {
-    fill: white;
+.nav-header ul li:hover a {
+    color: var(--textoNavHoverBackground);
 }
+
 
 @keyframes sacudir {
     0% {
@@ -284,8 +297,8 @@ svg {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 200;
     text-align: center;
 }
 
@@ -302,6 +315,17 @@ button {
 
 button a {
     color: white;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    animation: sacudir 0.5s;
+    transition: 0.5s;
+}
+
+button:hover a {
+    color: var(--textoNavHover);
+    font-weight: 700;
 }
 
 h2 {
@@ -353,4 +377,12 @@ h2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.txtTop3 {
+    height: 25%;
+    font-size: 5rem;
+    text-align: start;
+    margin-left: 3rem;
+    border-bottom: 2px solid gray;
 }
