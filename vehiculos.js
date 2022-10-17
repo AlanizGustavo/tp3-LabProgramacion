@@ -1,9 +1,9 @@
 import vehiculos from './vehiculos.json' assert {type: 'json'};
 
 const grid = document.querySelector('#grid');
-const filtro = document.querySelector(".filtros");
 const nombre = document.getElementById("nombre");
 let filtroNombre;
+let nombrePiloto;
 
 let cargaInicial = function(){
     vehiculos.forEach( element => {
@@ -14,45 +14,48 @@ let cargaInicial = function(){
 let agregarCards = function(element){
     const card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML = `<div class="contenedorTitulo">
-    <p class="nombre">${element.piloto}</p>
-    </div>
-    <div class="contenedorImagen">
-    <img class="img" src="${element.foto}">
-    </div>`;
+    card.innerHTML = `
+        <div class="contenedorTitulo">
+            <p class="nombre">${element.piloto}</p>
+        </div>
+        <div class="contenedorImagen">
+            <img class="img" src="${element.foto}">
+        </div>`;
     grid.appendChild(card);
 }
 
-filtro.addEventListener("submit", (e) => {
-    e.preventDefault();
-    filtroNombre = nombre.value;
-    vehiculos.forEach(element => {
-        if(element.piloto === filtroNombre){
+const filtrar = () => {
+    filtroNombre = nombre.value.toLowerCase();
+    if(filtroNombre === ""){
+        grid.innerHTML="";
+        cargaInicial();
+    }
+    else{
+        grid.innerHTML="";
+        let encontrado = false;
+        vehiculos.forEach(element => {
+            if(element.piloto.toLowerCase().includes(filtroNombre)){
+                agregarCards(element);
+                encontrado = true;
+            }
+        })
+        if(!encontrado){
+            const noEncontrado = {
+                "foto":"../assets/img/sinResultado.png",
+                "piloto": "NO SE ENCONTRARON PILOTOS"
+            };
             grid.innerHTML="";
-            agregarCards(element);
+            agregarCards(noEncontrado);
         }
-    });
-})
+    }
+    
+}    
 
-filtro.addEventListener("reset", (e) => {
-    e.preventDefault();
-    grid.innerHTML="";
-    cargaInicial();
-})
+nombre.addEventListener("keyup", filtrar);
 
 cargaInicial();
 
-// vehiculos.forEach(element => {
-//     const card = document.createElement("div");
-//     card.classList.add("card");
-//     card.innerHTML = `<div class="contenedorTitulo">
-//                         <p class="nombre">${element.piloto}</p>
-//                     </div>
-//                     <div class="contenedorImagen">
-//                         <img class="img" src="${element.foto}">
-//                     </div>`;
-//     grid.appendChild(card);
-// });
+
 
 
 

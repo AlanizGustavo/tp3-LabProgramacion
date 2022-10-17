@@ -136,12 +136,16 @@ svg{
     fill: rgb(0, 0, 0);
 }
 
+.main-vehiculos{
+    padding: 5%;
+}
+
 .grid{
     margin:5% 0% 10% 0%;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem 2rem;
+    gap: 3rem 4rem;
     padding: 1rem 25rem;
 }
 
@@ -183,23 +187,26 @@ svg{
     filter: grayscale(0);
 }
 
-.filtros{
+.filtrado{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin-right: 5rem;
 }
 
-.botonFiltro{
-    font-family: "Amatic SC", cursive;
-    padding: 0rem 3rem;
-    font-size: 2rem;
-    list-style: none;
-    background-color: #F7F0CA;
-    border-radius: 50px;
-    font-weight: 600;
-    margin: 1rem; 
+.alineacionFiltro{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .textField{
+    width: 20rem;
     border-radius: 50px;
-    padding-left: 1rem;
+    padding: 1rem;
+    border-color: #000;
+    border-style: solid;
+}
+
+.filtro{
+    border-color: transparent;
+    outline: none;
 }
