@@ -168,13 +168,18 @@ svg {
     fill: rgb(0, 0, 0);
 }
 
-.grid {
-    margin: 0 0% 10% 0%;
+
+.main-vehiculos{
+    padding: 5%;
+}
+
+.grid{
+    margin:5% 0% 10% 0%;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem 2rem;
-    padding: 1rem 25rem;
+    gap: 3rem 4rem;
+    padding: 1rem ;
 }
 
 .card {
@@ -240,6 +245,30 @@ svg {
     filter: grayscale(0);
 }
 
+.filtrado{
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.alineacionFiltro{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.textField{
+    width: 20rem;
+    border-radius: 50px;
+    padding: 1rem;
+    border-color: #000;
+    border-style: solid;
+}
+
+.filtro{
+    border-color: transparent;
+    outline: none;
+}
+
 .imagen-fondo {
     width: 100%;
     height: auto;
@@ -283,7 +312,6 @@ button a {
     100% {
         background-position: 100% 0;
     }
-
 }
 
 h2 {
@@ -308,4 +336,5 @@ h2 {
     border-radius: 15px;
     box-shadow: 0px 10px 30px #000000;
     margin: 2rem 2rem;
+
 }
