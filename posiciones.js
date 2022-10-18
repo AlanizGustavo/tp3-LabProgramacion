@@ -1,15 +1,15 @@
 import vehiculos from './vehiculos.json' assert {type: 'json'};
-let gridPosiciones = document.querySelector('#grid');
+let gridPosiciones = document.querySelector('#tabla');
 let posiciones = vehiculos.sort((a, b) => {
     return b.puntaje - a.puntaje;
 });
 posiciones.forEach(element => {
     const card = document.createElement("div");
-    card.classList.add("cardTabla");
-    card.innerHTML = `<div class="contenedorTitulo">
+    card.classList.add("filaTabla");
+    card.innerHTML = `<div class="contenedorImagen">
                             <img class="img" src="${element.foto}">
                         </div>
-                        <div class="contenedorTitulo">
+                        <div>
                             <p class="nombre">${element.piloto}</p>
                         </div>
                         <div class="contenedorPuntaje"> 
