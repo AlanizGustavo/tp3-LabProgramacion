@@ -157,12 +157,14 @@ a {
 
 .barra1.animado{
     transform: rotate(-45deg) translate(-10px,8px);
+    transition: 0.5s;
 }
 .barra2.animado{
     opacity: 0;
 }
 .barra3.animado{
     transform: rotate(45deg) translate(-10px,-8px);
+    transition: 0.5s;
 }
 
 /* FIN HAMBURGUESA */
