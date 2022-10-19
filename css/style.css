@@ -93,6 +93,80 @@ a {
     fill: white;
 }
 
+/* HAMBURGUESA */
+.ham{
+    display: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.ham span{
+    display: block;
+    background-color: rgb(0, 0, 0);
+    height: 3px;
+    width: 28px;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+@media (max-width:1080px){
+    .ham{
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    header .nav-header{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px 5px;
+    }
+
+    header .nav-header ul{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 40vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+
+    header nav ul li{
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+}
+
+@keyframes mostrarMenu {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.nav-header ul.activado{
+    display: flex;
+    animation: mostrarMenu 350ms ease-in-out both;
+}
+
+.barra1.animado{
+    transform: rotate(-45deg) translate(-10px,8px);
+}
+.barra2.animado{
+    opacity: 0;
+}
+.barra3.animado{
+    transform: rotate(45deg) translate(-10px,-8px);
+}
+
+/* FIN HAMBURGUESA */
+
 @keyframes sacudir {
     0% {
         transform: translate(1px, 1px) rotate(0deg);
