@@ -1,9 +1,10 @@
 [
     {
+
         "foto":"./assets/img/DSCN6953.JPG",
-        "marca": "Dodge",
-        "modelo": "Challenger",
-        "color": "Negro",
+        "marca": "Renault",
+        "modelo": "Torino",
+        "color": "Rojo",
         "ano": 1980,
         "piloto": "Leonel Bustamante",
         "copiloto": "Lorena Castillo",
