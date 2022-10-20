@@ -1,6 +1,6 @@
 [
     {
-        "foto":"../assets/img/DSCN4781.JPG",
+        "foto":"./assets/img/DSCN4781.JPG",
         "marca": "Renault",
         "modelo": "Torino",
         "color": "Rojo",
@@ -10,7 +10,7 @@
         "puntaje": 10
     },
     {
-        "foto":"../assets/img/DSCN4778.JPG",
+        "foto":"./assets/img/DSCN4778.JPG",
         "marca": "Peugeot",
         "modelo": "404",
         "color": "Marron",
@@ -20,7 +20,7 @@
         "puntaje": 15
     },
     {
-        "foto":"../assets/img/DSCN4783.JPG",
+        "foto":"./assets/img/DSCN4783.JPG",
         "marca": "Chevrolet",
         "modelo": "Corvette",
         "color": "Amarrillo",
@@ -30,7 +30,7 @@
         "puntaje": 30
     },
     {
-        "foto":"../assets/img/DSCN4785.JPG",
+        "foto":"./assets/img/DSCN4785.JPG",
         "marca": "Ford",
         "modelo": "Mustang",
         "color": "Azul",
@@ -40,7 +40,7 @@
         "puntaje": 40
     },
     {
-        "foto":"../assets/img/DSCN4794.JPG",
+        "foto":"./assets/img/DSCN4794.JPG",
         "marca": "Citroen",
         "modelo": "2CV",
         "color": "Verde",
@@ -50,7 +50,7 @@
         "puntaje": 15
     },
     {
-        "foto":"../assets/img/DSCN4788.JPG",
+        "foto":"./assets/img/DSCN4788.JPG",
         "marca": "Fiat",
         "modelo": "600",
         "color": "Blanco",
@@ -60,7 +60,7 @@
         "puntaje": 10
     },
     {
-        "foto":"../assets/img/DSCN6953.JPG",
+        "foto":"./assets/img/DSCN6953.JPG",
         "marca": "Renault",
         "modelo": "Torino",
         "color": "Rojo",
@@ -70,7 +70,7 @@
         "puntaje": 50
     },
     {
-        "foto":"../assets/img/DSCN6954.JPG",
+        "foto":"./assets/img/DSCN6954.JPG",
         "marca": "Skoda",
         "modelo": "Favorit",
         "color": "Gris",
@@ -80,7 +80,7 @@
         "puntaje": 20
     },
     {
-        "foto":"../assets/img/DSCN6958.JPG",
+        "foto":"./assets/img/DSCN6958.JPG",
         "marca": "BMW",
         "modelo": "M4",
         "color": "Negro",
