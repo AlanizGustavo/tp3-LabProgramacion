@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-        <title>CAACEP - Vehículos</title>
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>CAACEP - Posiciones</title>
     </head>
 
     <body>
         <header>
             <nav class="nav-header">
                 <div class="logo">
-                    <a href="../index.html"> <img src="../assets/img/Logo_caacep.png" alt="Logo CAACEP"> </a>
+                    <a href="../../index.html"> <img src="../../assets/img/Logo_caacep.png" alt="Logo CAACEP"> </a>
                     <p>Club de Automoviles Antiguos, Clasicos y Especiales de la Patagonia</p>
                 </div>
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="vehiculos.html">Pilotos</a></li>
-                    <li><a href="tabla.html">Tabla</a></li>
-                    <li><a href="media.html">Media</a></li>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../vehiculos/vehiculos.html">Pilotos</a></li>
+                    <li><a href="../../posiciones/tabla.html">Tabla</a></li>
+                    <li><a href="#">Media</a></li>
                 </ul>
                 <button class="ham" type="button">
                     <span class="barra1"></span>
@@ -29,23 +29,25 @@
                 </button>
             </nav>
         </header>
-        <main class="main-vehiculos">
+        <main>
             <div class="titulo">
-                <h1>Pilotos de CAACEP</h1>
+                <h1>Media</h1>
             </div>
-            <div class="alineacionFiltro">
-                <div class="filtrado textField">
-                    <input class="filtro" id="nombre" type="text" placeholder="Buscar" name="nombre">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                </div>
-            </div>
-            <section id="grid" class="grid"></section>
+            <section id="media-grid-template" class="media-grid-template">
+                <img class="foto1 img" src="../../assets/img/WhatsApp Image 2022-10-20 at 2.23.15 AM.jpeg" alt="Torino Rojo">
+                <img class="foto2 img" src="../../assets/img/DSCN4781.JPG" alt="Dodge Challenger">
+                <img class="foto3" src="../../assets/img/DSCN4778.png" alt="Fiat 600">
+                <img class="foto4" src="../../assets/img/DSCN4783.JPG" alt="Ford Mercury">
+                <img class="foto5" src="../../assets/img/DSCN4785.JPG" alt="Ford T">
+                <img class="foto6" src="../../assets/img/DSCN4788.JPG" alt="Buggy">
+                <img class="foto7" src="../../assets/img/DSCN4794.JPG" alt="Ford Mustang">
+                <img class="foto8" src="../../assets/img/DSCN6958.JPG" alt="Citroen 3CV">
+                <img class="foto9" src="../../assets/img/autoEnRuta.JPG" alt="DKWF94">
+            </section>
         </main>
         <footer>
             <div class="logo">
-                <a href="#"><img src="../assets/img/Logo_caacep.png" alt="Logo CAACEP"></a>
+                <a href="../../index.html"><img src="../../assets/img/Logo_caacep.png" alt="Logo CAACEP"></a>
                 <p>Club de Automoviles Antiguos, Clasicos y Especiales de la Patagonia</p>
             </div>
             <div class="contacto">
@@ -78,8 +80,7 @@
             </div>
             <p class="copyright">&copy; 2022 CAACEP, todos los derechos reservados</p>
         </footer>
-        <script type="module" src="../vehiculos.js"></script>
-        <script type="module" src="../hamburger.js"></script>
+        <script type="module" src="../../script/hamburger.js"></script>
     </body>
 
 </html>

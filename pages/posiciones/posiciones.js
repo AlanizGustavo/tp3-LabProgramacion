@@ -1,4 +1,4 @@
-import vehiculos from './vehiculos.json' assert {type: 'json'};
+import vehiculos from '../../vehiculos.json' assert {type: 'json'};
 let gridPosiciones = document.querySelector('#tabla');
 let posiciones = vehiculos.sort((a, b) => {
     return b.puntaje - a.puntaje;
@@ -25,7 +25,7 @@ posiciones.forEach((element,index) => {
                             <p>${puesto(index)}</p>
                         </div>
                         <div class="contenedorImagen">
-                            <img class="img" src=".${element.foto}">
+                            <img class="img" src="../.${element.foto}">
                         </div>
                         <div>
                             <p class="nombre">${element.piloto}</p>
