@@ -361,8 +361,13 @@ svg {
     height: auto;
 }
 
+.imagen-fondo2{
+    display: none;
+}
+
 .seccion-principal {
     position: relative;
+    overflow: hidden;
 }
 
 .texto-club {
@@ -682,6 +687,17 @@ h2 {
     .encabezadoTabla p{
         font-size: 3rem;
     }
+
+    .imagen-fondo {
+        display: none;
+    }
+
+    .imagen-fondo2 {
+        display: flex;
+        width:auto;
+        height: 100vh;
+    }
+
 }
 @media (min-width:655px) and (max-width: 1600px) {
     .txtTop3{
