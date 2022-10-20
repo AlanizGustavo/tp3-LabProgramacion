@@ -13,7 +13,7 @@ let cargaInicial = function () {
 let agregarFoto = function (element) {
     const card = document.createElement("div");
     card.classList.add("mediaCard");
-    card.innerHTML = `<img class="media-item" src="${element.foto}">`;
+    card.innerHTML = `<img class="media-item" src=".${element.foto}">`;
     grid.appendChild(card);
 }
 
