@@ -359,13 +359,14 @@ svg {
 
 .texto-club {
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 78%;
+    left: 25%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 5rem;
     font-weight: 700;
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
 }
 
 button {
