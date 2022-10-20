@@ -1,4 +1,4 @@
-import vehiculos from './vehiculos.json' assert {type: 'json'};
+import vehiculos from '../vehiculos.json' assert {type: 'json'};
 let gridPosiciones = document.querySelector('#grid');
 let posiciones = vehiculos.sort((a, b) => {
     return b.puntaje - a.puntaje;

@@ -1,4 +1,4 @@
-import vehiculos from './vehiculos.json' assert {type: 'json'};
+import vehiculos from '../../vehiculos.json' assert {type: 'json'};
 
 const grid = document.querySelector('#grid');
 const nombre = document.getElementById("nombre");
@@ -19,7 +19,7 @@ let agregarCards = function(element){
             <p class="nombre">${element.piloto}</p>
         </div>
         <div class="contenedorImagen">
-            <img class="img" src=".${element.foto}">
+            <img class="img" src="../.${element.foto}">
         </div>`;
     grid.appendChild(card);
 }
