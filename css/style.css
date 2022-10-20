@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', Arial, sans-serif;
+    --colorPrincipal: #D3455B;
 }
 
 html {
@@ -17,70 +19,62 @@ main {
 header {
     position: fixed;
     top: 0;
-    display: flex;
     width: 100%;
+    height: 10rem;
+    border-bottom: 2px solid var(--colorPrincipal);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    background-color: white;
     z-index: 1;
-}
-
-.titulo {
-    margin-top: 19rem;
-    margin-bottom: 5rem;
-    display: flex;
-    justify-content: center;
-    font-size: 3rem;
+    background-color: white;
 }
 
 .nav-header {
     display: flex;
+    width: 100%;
+    height: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding-left: 5rem;
     padding-right: 5rem;
 }
 
 .logo {
     display: flex;
-    align-items: center;
+    height: 200%;
 }
 
 .logo img {
-    width: 10rem;
-    height: auto;
+    height: 100%;
     padding: 0.5rem;
+    width: auto;
 }
 
-.logo p {
-    width: 30rem;
-    font-family: 'Oswald', sans-serif;
-    margin: 1rem;
-    font-size: 2rem;
-    font-weight: 100;
-    width: 30rem;
+header .logo p {
+    padding-top: 4rem;
+    font-size: 2.3rem;
+    color: #000;
 }
 
 
 .nav-header ul {
     display: flex;
-    justify-content: end;
 }
 
 .nav-header ul li {
-    list-style: none;
-    margin: 2rem;
     background-color: #ffffff;
-    padding: 1rem 2rem;
     border-radius: 10px;
+    border: 2px solid var(--colorPrincipal);
     font-size: 2rem;
     font-weight: 100;
-    font-family: 'Oswald', sans-serif;
+    list-style: none;
+    margin: 2rem;
+    padding: 1rem 2rem;
 }
 
-a {
+a,
+p {
     text-decoration: none;
+    font-family: 'Montserrat', Arial, sans-serif;
     color: #000;
 }
 
@@ -89,9 +83,6 @@ a {
     animation: sacudir 0.5s;
 }
 
-.nav-header ul li:hover svg {
-    fill: white;
-}
 
 /* HAMBURGUESA */
 .ham{
@@ -215,33 +206,62 @@ a {
     }
 }
 
+.titulo {
+    margin-top: 19rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}
+
 footer {
     width: 100%;
+    height: 20rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background-color: #000;
+}
+
+footer .logo {
+    display: flex;
+    height: 100%;
+}
+
+
+footer .logo p {
+    font-size: 2rem;
+    align-self: center;
     color: white;
 }
 
-footer .nav-header li {
+footer .nav-footer ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .nav-footer li {
     padding: 1rem 4rem;
+    font-size: 1.5rem;
+    list-style: none;
 }
 
 .contacto {
     font-size: 1.5rem;
     text-align: center;
+    color: white;
 }
 
 .copyright {
+    color: white;
     font-size: 1.5rem;
     text-align: center;
 }
 
 svg {
     width: 3rem;
-    fill: rgb(0, 0, 0);
+    fill: white;
 }
 
 
@@ -359,11 +379,11 @@ svg {
 
 .texto-club {
     position: absolute;
-    top: 30%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
     text-align: center;
 }
@@ -373,8 +393,7 @@ button {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0);
     font-size: 2rem;
     padding: 2rem;
 }
