@@ -553,12 +553,6 @@ h2 {
     grid-template-columns: repeat(5,1fr);
     grid-auto-rows: 250px;
     gap: 2rem;
-    grid-template-areas: 
-    " vacio vacio foto1 vacio vacio"
-    " foto2 foto2 foto1 foto3 foto4"
-    " vacio foto5 foto5 foto5 vacio"
-    " vacio vacio foto7 foto7 vacio"
-    " vacio vacio foto7 foto7 vacio";
 }
 
 .media-grid-template img{
