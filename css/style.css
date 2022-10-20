@@ -542,7 +542,7 @@ h2 {
     text-decoration-color: gray;
 }
 
-.contenedorImagen img{
+.tabla .contenedorImagen img{
     border-radius: 10px;
 }
 
@@ -685,7 +685,7 @@ h2 {
     }
 
     .encabezadoTabla p{
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .imagen-fondo {
