@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
 }
 
 html {
@@ -94,7 +95,7 @@ a {
 }
 
 /* HAMBURGUESA */
-.ham{
+.ham {
     display: none;
     cursor: pointer;
     border: none;
@@ -102,7 +103,7 @@ a {
     box-shadow: none;
 }
 
-.ham span{
+.ham span {
     display: block;
     background-color: rgb(0, 0, 0);
     height: 3px;
@@ -111,21 +112,21 @@ a {
     border-radius: 2px;
 }
 
-@media (max-width:1080px){
-    .ham{
+@media (max-width:1080px) {
+    .ham {
         display: block;
         position: absolute;
         top: 25px;
         right: 25px;
     }
 
-    header .nav-header{
+    header .nav-header {
         flex-direction: column;
         align-items: flex-start;
         padding: 0px 5px;
     }
 
-    header .nav-header ul{
+    header .nav-header ul {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
@@ -137,7 +138,7 @@ a {
         opacity: 0;
     }
 
-    header nav ul li{
+    header nav ul li {
         width: 100%;
         text-align: center;
         padding: 20px;
@@ -146,24 +147,31 @@ a {
 }
 
 @keyframes mostrarMenu {
-    from{opacity: 0;}
-    to{opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-.nav-header ul.activado{
+.nav-header ul.activado {
     display: flex;
     animation: mostrarMenu 350ms ease-in-out both;
 }
 
-.barra1.animado{
-    transform: rotate(-45deg) translate(-10px,8px);
+.barra1.animado {
+    transform: rotate(-45deg) translate(-10px, 8px);
     transition: 0.5s;
 }
-.barra2.animado{
+
+.barra2.animado {
     opacity: 0;
 }
-.barra3.animado{
-    transform: rotate(45deg) translate(-10px,-8px);
+
+.barra3.animado {
+    transform: rotate(45deg) translate(-10px, -8px);
     transition: 0.5s;
 }
 
@@ -304,7 +312,7 @@ svg {
     font-size: 2rem;
 }
 
-.grid .nombre{
+.grid .nombre {
     background-color: rgb(204, 197, 183);
 }
 
@@ -359,14 +367,52 @@ svg {
 
 .texto-club {
     position: absolute;
-    top: 78%;
-    left: 25%;
+    top: 80%;
+    left: 27%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 5rem;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+}
+
+.texto-club h1 {
+    scale: 1.03;
+    transition: transform ease-out 0.5s;
+}
+
+.texto-club a {
+    position: absolute;
+    color: transparent;
+    font-size: 5rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    line-height: 1em;
+    transition: 1s;
+    -webkit-text-stroke: 1px white;
+}
+
+.texto-club a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: white;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    border-right: 8px solid white;
+    -webkit-text-stroke: 1px white;
+}
+
+.texto-club a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px white);
+}
+
+
+.texto-club h1:hover {
+    transform: scale(1.03);
 }
 
 button {
@@ -374,10 +420,13 @@ button {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 2rem;
     padding: 2rem;
+}
+
+button a:hover {
+    color: #2c3357;
 }
 
 button a {
@@ -435,14 +484,14 @@ h2 {
     flex-wrap: wrap;
 }
 
-#tabla{
+#tabla {
     border-radius: 15px;
     margin: 10vw;
     background-color: rgb(228, 227, 227);
-    box-shadow: 0px 0px 10px 0px ;
+    box-shadow: 0px 0px 10px 0px;
 }
 
-.filaTabla{
+.filaTabla {
     display: flex;
     align-items: center;
     padding: 1rem 0;
@@ -451,28 +500,38 @@ h2 {
     border-width: 1px;
 }
 
-.filaTabla div{
+.filaTabla div {
     flex: 1;
 }
 
-.filaTabla:hover{
+.filaTabla:hover {
     background-color: rgb(220, 223, 220);
 }
 
-.filaTabla img{
+.filaTabla img {
     width: 15vw;
     margin: auto;
     display: block;
 }
 
-.encabezadoTabla{
+.encabezadoTabla {
     display: flex;
     font-size: 5rem;
     border-bottom-style: solid;
     border-color: rgb(165, 167, 168);
 }
 
-.encabezadoTabla p{
+.encabezadoTabla p {
     flex: 1;
     text-align: center;
+}
+
+.txtTop3 {
+    font-size: 5rem;
+    line-height: 5rem;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 20rem;
+    text-decoration: underline;
+    text-decoration-color: gray;
 }
