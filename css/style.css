@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    font-family: 'Oswald', Arial, sans-serif;
     --colorPrincipal: #D3455B;
 }
 
@@ -85,7 +85,7 @@ p {
 
 
 /* HAMBURGUESA */
-.ham {
+.ham{
     display: none;
     cursor: pointer;
     border: none;
@@ -93,7 +93,7 @@ p {
     box-shadow: none;
 }
 
-.ham span {
+.ham span{
     display: block;
     background-color: rgb(0, 0, 0);
     height: 3px;
@@ -102,21 +102,21 @@ p {
     border-radius: 2px;
 }
 
-@media (max-width:1080px) {
-    .ham {
+@media (max-width:1080px){
+    .ham{
         display: block;
         position: absolute;
         top: 25px;
         right: 25px;
     }
 
-    header .nav-header {
+    header .nav-header{
         flex-direction: column;
         align-items: flex-start;
         padding: 0px 5px;
     }
 
-    header .nav-header ul {
+    header .nav-header ul{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
@@ -128,7 +128,7 @@ p {
         opacity: 0;
     }
 
-    header nav ul li {
+    header nav ul li{
         width: 100%;
         text-align: center;
         padding: 20px;
@@ -137,31 +137,24 @@ p {
 }
 
 @keyframes mostrarMenu {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
 
-.nav-header ul.activado {
+.nav-header ul.activado{
     display: flex;
     animation: mostrarMenu 350ms ease-in-out both;
 }
 
-.barra1.animado {
-    transform: rotate(-45deg) translate(-10px, 8px);
+.barra1.animado{
+    transform: rotate(-45deg) translate(-10px,8px);
     transition: 0.5s;
 }
-
-.barra2.animado {
+.barra2.animado{
     opacity: 0;
 }
-
-.barra3.animado {
-    transform: rotate(45deg) translate(-10px, -8px);
+.barra3.animado{
+    transform: rotate(45deg) translate(-10px,-8px);
     transition: 0.5s;
 }
 
@@ -224,8 +217,6 @@ p {
 footer {
     width: 100%;
     height: 20rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -259,7 +250,6 @@ footer .nav-footer li {
 .contacto {
     font-size: 1.5rem;
     text-align: center;
-    border-radius: 50%;
     color: white;
 }
 
@@ -334,7 +324,7 @@ svg {
     font-size: 2rem;
 }
 
-.grid .nombre {
+.grid .nombre{
     background-color: rgb(204, 197, 183);
 }
 
@@ -389,14 +379,13 @@ svg {
 
 .texto-club {
     position: absolute;
-    top: 78%;
-    left: 27%;
+    top: 38%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 4rem;
     font-weight: 700;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
 }
 
 button {
@@ -464,14 +453,14 @@ h2 {
     flex-wrap: wrap;
 }
 
-#tabla {
+#tabla{
     border-radius: 15px;
     margin: 10vw;
     background-color: rgb(228, 227, 227);
-    box-shadow: 0px 0px 10px 0px;
+    box-shadow: 0px 0px 10px 0px ;
 }
 
-.filaTabla {
+.filaTabla{
     display: flex;
     align-items: center;
     padding: 1rem 0;
@@ -480,36 +469,28 @@ h2 {
     border-width: 1px;
 }
 
-.filaTabla div {
+.filaTabla div{
     flex: 1;
 }
 
-.filaTabla:hover {
+.filaTabla:hover{
     background-color: rgb(220, 223, 220);
 }
 
-.filaTabla img {
+.filaTabla img{
     width: 15vw;
     margin: auto;
     display: block;
 }
 
-.encabezadoTabla {
+.encabezadoTabla{
     display: flex;
     font-size: 5rem;
     border-bottom-style: solid;
     border-color: rgb(165, 167, 168);
 }
 
-.encabezadoTabla p {
+.encabezadoTabla p{
     flex: 1;
     text-align: center;
-}
-
-.txtTop3 {
-    padding-left: 17rem;
-    font-size: 5rem;
-    text-align: left;
-    text-decoration: underline;
-    text-decoration-color: gray;
 }
