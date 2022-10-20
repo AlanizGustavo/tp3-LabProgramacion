@@ -3,7 +3,7 @@
 
         "foto":"./assets/img/DSCN6953.JPG",
         "marca": "Renault",
-        "modelo": "Torino",
+        "modelo": "Torino ZX",
         "color": "Rojo",
         "ano": 1980,
         "piloto": "Leonel Bustamante",
@@ -12,32 +12,32 @@
     },
     {
         "foto":"./assets/img/DSCN4785.JPG",
-        "marca": "Fiat",
-        "modelo": "600",
-        "color": "Crema",
-        "ano": 1975,
+        "marca": "Ford",
+        "modelo": "T",
+        "color": "Marron",
+        "ano": 1910,
         "piloto": "Adriano Lusso",
-        "copiloto": "Adriana Lusso",
+        "copiloto": "Luis Reynoso",
         "puntaje": 80
     },
     {
         "foto":"./assets/img/DSCN4783.JPG",
-        "marca": "Ford",
-        "modelo": "Mercury",
+        "marca": "Mercury",
+        "modelo": "Montclair",
         "color": "Rojo",
-        "ano": 1965,
+        "ano": 1955,
         "piloto": "Gustavo Alaniz",
         "copiloto": "Victoria de Alaniz",
         "puntaje": 100
     },
     {
         "foto":"./assets/img/DSCN4778.png",
-        "marca": "Ford",
-        "modelo": "T",
-        "color": "Marron",
-        "ano": 1968,
+        "marca": "Fiat",
+        "modelo": "600",
+        "color": "Crema",
+        "ano": 1955,
         "piloto": "Antonella Torres",
-        "copiloto": "Javier Peralta",
+        "copiloto": "Pablo Kogan",
         "puntaje": 40
     },
     {
@@ -45,29 +45,29 @@
         "marca": "Ford",
         "modelo": "Mustang",
         "color": "Rojo",
-        "ano": 1960,
+        "ano": 1965,
         "piloto": "Agustin Chiarotto",
         "copiloto": "Silvia Amaro",
         "puntaje": 15
     },
     {
         "foto":"./assets/img/DSCN4788.JPG",
-        "marca": "Buggy",
-        "modelo": "470",
+        "marca": "Mercedes Benz",
+        "modelo": "SSK",
         "color": "Rojo",
-        "ano": 1960,
-        "piloto": "Juan Pablo",
+        "ano": 1930,
+        "piloto": "Juan Pablo Orlando",
         "copiloto": "Gerardo Parra",
         "puntaje": 10
     },
     {
         "foto":"./assets/img/DSCN4781.JPG",
-        "marca": "Renault",
-        "modelo": "Torino",
-        "color": "Rojo",
-        "ano": 1980,
-        "piloto": "Natalio Hecht",
-        "copiloto": "Alejandro Jalil",
+        "marca": "Dodge",
+        "modelo": "Charger",
+        "color": "Negro",
+        "ano": 1966,
+        "piloto": "Gabriela Aranda",
+        "copiloto": "Jorge Rodriguez",
         "puntaje": 30
     },
     {
@@ -75,8 +75,8 @@
         "marca": "Peugeot",
         "modelo": "404",
         "color": "Blanco",
-        "ano": 1980,
-        "piloto": "Alan Gomez",
+        "ano": 1960,
+        "piloto": "Alan De Renzis",
         "copiloto": "Valeria Zorrato",
         "puntaje": 20
     },
@@ -85,9 +85,9 @@
         "marca": "Citroen",
         "modelo": "3cv",
         "color": "Naranja",
-        "ano": 1985,
+        "ano": 1950,
         "piloto": "Claudia Allan",
-        "copiloto": "Pedro Gomez",
+        "copiloto": "Susana Parra",
         "puntaje": 15
     }
 ]
