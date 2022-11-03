@@ -41,7 +41,7 @@ const filtrar = () => {
         })
         if(!encontrado){
             const noEncontrado = {
-                "foto":"../assets/img/sinResultado.png",
+                "foto":"./../assets/img/sinResultado.png",
                 "piloto": "NO SE ENCONTRARON PILOTOS"
             };
             grid.innerHTML="";
