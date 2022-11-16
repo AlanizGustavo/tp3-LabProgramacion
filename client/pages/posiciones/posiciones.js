@@ -1,8 +1,5 @@
-import vehiculos from '../../vehiculos.json' assert {type: 'json'};
 let gridPosiciones = document.querySelector('#tabla');
-let posiciones = vehiculos.sort((a, b) => {
-    return b.puntaje - a.puntaje;
-});
+
 
 let puesto = (index) => {
     let pos = `${index + 1}º `;
@@ -18,7 +15,10 @@ let puesto = (index) => {
     return pos;
 }
 
-posiciones.forEach((element,index) => {
+const request = await fetch(`http://localhost:9000/api/vehiculos`);
+const posiciones = await request.json();
+
+posiciones.forEach(async (element,index) => {
     const card = document.createElement("div");
     card.classList.add("filaTabla");
     card.innerHTML = `  <div class="puesto">
