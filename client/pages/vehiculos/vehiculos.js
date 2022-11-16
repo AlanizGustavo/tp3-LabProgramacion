@@ -1,11 +1,12 @@
-import vehiculos from '../../vehiculos.json' assert {type: 'json'};
-
 const grid = document.querySelector('#grid');
 const nombre = document.getElementById("nombre");
 let filtroNombre;
 let nombrePiloto;
 
-let cargaInicial = function(){
+let cargaInicial = async function(){
+    const request = await fetch(`http://localhost:9000/api/vehiculos`);
+    const vehiculos = await request.json();
+
     vehiculos.forEach( element => {
         agregarCards(element);
     }
@@ -24,25 +25,38 @@ let agregarCards = function(element){
     grid.appendChild(card);
 }
 
-const filtrar = () => {
+const filtrar = async () => {
     filtroNombre = nombre.value.toLowerCase();
+    
+        const request = await fetch(`http://localhost:9000/api/vehiculos/${filtroNombre}`);
+        const vehiculos = await request.json();
+
     if(filtroNombre === ""){
         grid.innerHTML="";
         cargaInicial();
     }
     else{
         grid.innerHTML="";
-        let encontrado = false;
-        vehiculos.forEach(element => {
-            if(element.piloto.toLowerCase().includes(filtroNombre)){
-                agregarCards(element);
-                encontrado = true;
+        
+        if(request.status === 200){
+            if(vehiculos.length > 0){
+                vehiculos.forEach(element => {
+                    agregarCards(element);
+                })
             }
-        })
-        if(!encontrado){
+            else{
+                const noEncontrado = {
+                    "foto":"./../assets/img/sinResultado.png",
+                    "piloto": "NO SE ENCONTRARON PILOTOS"
+                };
+                grid.innerHTML="";
+                agregarCards(noEncontrado);
+            }
+        }
+        else {
             const noEncontrado = {
                 "foto":"./../assets/img/sinResultado.png",
-                "piloto": "NO SE ENCONTRARON PILOTOS"
+                "piloto": "ALGO SALIO MAL!!!! Error en la consulta"
             };
             grid.innerHTML="";
             agregarCards(noEncontrado);
