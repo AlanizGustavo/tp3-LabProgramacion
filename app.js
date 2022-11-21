@@ -7,12 +7,16 @@ const vehiculos = require('./vehiculos.json');
 
 const app = express();
 
+// Init middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
+
 // Declare routes
 app.use(routeVhiculos);
 
-
-// Init middleware
-app.use(cors());
 
 
 app.set('port', process.env.PORT || 9000);
