@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const modeloVehiculo = mongoose.Schema({
     piloto:{
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'persona'
     },
     copiloto:{
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'persona'
     },
     marca: { 
         type: String, 
