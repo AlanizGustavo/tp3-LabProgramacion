@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const routeVhiculos = require('./backend/routes/vehiculos');
-
-const vehiculos = require('./vehiculos.json');
+const routeVhiculos = require('./backend/routes/routeVehiculos');
+const routePersonas = require('./backend/routes/routePersonas');
 
 const app = express();
 
@@ -16,6 +15,7 @@ app.use(express.urlencoded({
 
 // Declare routes
 app.use(routeVhiculos);
+app.use(routePersonas);
 
 
 
