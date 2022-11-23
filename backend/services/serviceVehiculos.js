@@ -90,7 +90,39 @@ const deleteVehiculo = async (id) => {
 }
 
 const getVehiculo = async (id) => {   
-    return await modeloVehiculo.find({_id: new mongoose.mongo.ObjectId(id)});
+    return await modeloVehiculo.aggregate(
+        [
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'piloto',
+                        foreignField: '_id',
+                        as: 'piloto'
+                    }
+            },
+            {
+                $unwind:'$piloto'
+            }, 
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'copiloto',
+                        foreignField: '_id',
+                        as: 'copiloto'
+                    }
+            },
+            {
+                $unwind:'$copiloto'
+            },
+            {
+                $match: {
+                    '_id': new mongoose.mongo.ObjectId(id)
+                }
+            }   
+        ]
+    ).sort({puntaje: 'desc'})
 }
 
 const editVehiculo = async (id, data) => {   
