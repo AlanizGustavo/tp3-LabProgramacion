@@ -58,24 +58,13 @@
                 <button id="registroAuto">Registrar Auto</button>
             </div>
             <section id="tablaAdmin" class="tablaAdmin">
-                <table>
-                    <thead>
-                        <tr class="encabezadoTablaAdmin">
-                            <th>N°</th>
-                            <th>Imagen</th>
-                            <th>Marca</th>
-                            <th>Modelo</th>
-                            <th>Anio</th>
-                            <th>Piloto</th>
-                            <th>Copiloto</th>
-                            <th>Puntaje</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla">
-                    </tbody>
-                </table>
+                <div class="encabezadoTabla">
+                    <p>N°</p>
+                    <p>Imagen</p>
+                    <p>Información</p>
+                    <p>Editar</p>
+                    <p>Eliminar</p>
+                </div>
             </section>
             <div class="formularioPersona" id="formularioPersona">
                 <div class="modal">
@@ -129,6 +118,7 @@
                     </form>
                 </div>
             </div>
+
             </section>
         </main>
         <footer>
@@ -166,9 +156,9 @@
             </div>
             <p class="copyright">&copy; 2022 CAACEP, todos los derechos reservados</p>
         </footer>
-        <script type="module" src="../../script/hamburger.js"></script>
-        <script type="module" src="registros.js"></script>
         <script type="module" src="vehiculos.js"></script>
+        <script type="module" src="../../script/hamburger.js"></script>
+        <script src="registros.js"></script>
     </body>
 
 </html>

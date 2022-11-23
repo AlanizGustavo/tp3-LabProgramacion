@@ -1,18 +1,25 @@
+
+
 const request = await fetch(`http://localhost:9000/api/vehiculos`);
 const posiciones = await request.json();
 
-let gridPosiciones = document.querySelector('#tabla');
+let gridPosiciones = document.querySelector('#tablaAdmin');
+
 posiciones.forEach(async (element, index) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${index + 1}</td>
-                    <td><img src="../.${element.foto}" alt="${element.marca} - ${element.modelo}" class="imagenTablaAdmin"></td>
-                    <td>${element.marca}</td>
-                    <td>${element.modelo}</td>
-                    <td>${element.ano}</td>
-                    <td>${element.piloto}</td>
-                    <td>${element.copiloto}</td>
-                    <td>${element.puntaje}</td>
-                    <td><button class="botonEditar" onclick="editarVehiculo(${element.id})">✏️</button></td>
-                    <td><button class="botonEliminar" onclick="eliminarVehiculo(${element.id})">❌</button></td>`;
-    gridPosiciones.appendChild(tr);
+    const linea = document.createElement("div");
+    linea.classList.add("filaTabla");
+    linea.innerHTML = `
+                    <div><p>${index + 1}</p></div>
+                    <div><img class="img" src="../.${element.foto}" alt="${element.marca} - ${element.modelo}" class="imagenTablaAdmin"></div>
+                    <div class="info">    
+                    <p class="nombre">Marca: ${element.marca}</p>
+                        <p class="nombre">Modelo: ${element.modelo}</p>
+                        <p class="nombre">Año: ${element.ano}</p>
+                        <p class="nombre">Piloto: ${element.piloto}</p>
+                        <p class="nombre">Copiloto: ${element.copiloto}</p>
+                        <p class="nombre">Puntaje: ${element.puntaje}</p>
+                    </div>
+                    <div><button class="botonEditar" id="botonEditar" onclick="editarAuto('${element._id}')">✏️</button></div>
+                    <div><button class="botonEliminar" class="botonEliminar">❌</button></div>`;
+    gridPosiciones.appendChild(linea);
 });
