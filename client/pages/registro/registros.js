@@ -28,12 +28,13 @@ closeAuto.addEventListener('click', () => {
 async function editarAuto(id) {
     // Cargo valores actuales en el formulario
     const auto = await getAuto(id);
+    console.log("id: ", id, "AUTO: ", auto);
 
     document.querySelector('#marca').setAttribute('value', auto.marca);
     document.querySelector('#modelo').setAttribute('value', auto.modelo);
     document.querySelector('#anio').setAttribute('value', auto.anio);
-    document.querySelector('#piloto').setAttribute('value', auto.piloto);
-    document.querySelector('#copiloto').setAttribute('value', auto.copiloto);
+    //document.querySelector('#piloto').setAttribute('value', auto.piloto.nombre);
+    //document.querySelector('#copiloto').setAttribute('value', auto.copiloto.nombre);
     document.querySelector('#puntaje').setAttribute('value', auto.puntaje);
     document.querySelector('#foto').setAttribute('value', auto.foto);
 
@@ -43,13 +44,13 @@ async function editarAuto(id) {
     });
 
     // Abro el formulario
-    document.querySelector('#formularioEditarAuto').classList.add('show')
-    document.querySelector('#formularioEditarAuto').setAttribute('method', 'PUT')
-    document.querySelector('#formularioEditarAuto').setAttribute('action', `/api/vehiculos/id`)
+    document.querySelector('#formularioAuto').classList.add('show')
+    document.querySelector('#formularioAuto').setAttribute('method', 'PUT')
+    document.querySelector('#formularioAuto').setAttribute('action', `/api/vehiculos/buscarVehiculo/${id}`)
 }
 
 async function getAuto(id) {
-    const response = await fetch(`http://localhost:9000/api/vehiculos/${id}`);
+    const response = await fetch(`http://localhost:9000/api/vehiculos/buscarVehiculo/${id}`);
     const auto = await response.json();
     return auto;
 }

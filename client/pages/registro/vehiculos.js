@@ -14,9 +14,9 @@ posiciones.forEach(async (element, index) => {
                     <div class="info">    
                     <p class="nombre">Marca: ${element.marca}</p>
                         <p class="nombre">Modelo: ${element.modelo}</p>
-                        <p class="nombre">Año: ${element.ano}</p>
-                        <p class="nombre">Piloto: ${element.piloto}</p>
-                        <p class="nombre">Copiloto: ${element.copiloto}</p>
+                        <p class="nombre">Año: ${element.anio}</p>
+                        <p class="nombre">Piloto: ${element.piloto.nombre}</p>
+                        <p class="nombre">Copiloto: ${element.copiloto.nombre}</p>
                         <p class="nombre">Puntaje: ${element.puntaje}</p>
                     </div>
                     <div><button class="botonEditar" id="botonEditar" onclick="editarAuto('${element._id}')">✏️</button></div>
