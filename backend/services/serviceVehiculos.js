@@ -1,11 +1,54 @@
 const modeloVehiculo = require('../models/vehiculosSchema');
+const mongoose = require('mongoose');
 
 const getAllVehiculos = async () => {
-    return await modeloVehiculo.find({});
+    return await modeloVehiculo.aggregate(
+        [
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'piloto',
+                        foreignField: '_id',
+                        as: 'piloto'
+                    }
+            },
+            {
+                $unwind:'$piloto'
+            }, 
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'copiloto',
+                        foreignField: '_id',
+                        as: 'copiloto'
+                    }
+            },
+            {
+                $unwind:'$copiloto'
+            }, 
+        ]
+    ).sort({puntaje: 'desc'})
 }
 
 const getTop3 = async () => {
-    return await modeloVehiculo.find({}).sort({puntaje: 'desc', limit: 3});
+    return await modeloVehiculo.aggregate(
+        [
+            {
+                $lookup:
+                {
+                    from: 'personas',
+                    localField: 'piloto',
+                    foreignField: '_id',
+                    as: 'piloto'
+                }
+            },
+            {
+                $unwind:'$piloto'
+            }, 
+        ]
+    ).sort({puntaje: 'desc'}).limit(3);
 }
 
 const crearVehiculo = async (data) => {
@@ -16,4 +59,48 @@ const crearVehiculo = async (data) => {
     }
 }
 
-module.exports = {getAllVehiculos, getTop3, crearVehiculo};
+const filtrarNombre = async (nombre) => {    
+    return await modeloVehiculo.aggregate(
+        [
+            {
+                $lookup:
+                {
+                    from: 'personas',
+                    localField: 'piloto',
+                    foreignField: '_id',
+                    as: 'piloto'
+                }
+            },
+            {
+                $unwind:'$piloto'
+            },
+            {
+                $match: {
+                    'piloto.nombre': { $regex: nombre, $options:'i' }
+                }
+            }  
+        ]
+    );
+    
+}
+
+const deleteVehiculo = async (id) => {   
+    return await modeloVehiculo.findOneAndDelete({_id: new mongoose.mongo.ObjectId(id)});
+    
+}
+
+const getVehiculo = async (id) => {   
+    return await modeloVehiculo.find({_id: new mongoose.mongo.ObjectId(id)});
+}
+
+const editVehiculo = async (id, data) => {   
+    const vehiculo = await  modeloVehiculo.find({_id: new mongoose.mongo.ObjectId(id)});
+    console.log(data)
+    console.log(vehiculo)
+    console.log(await Object.assign(vehiculo[0], data));
+    modeloVehiculo
+    return await Object.assign(vehiculo[0], data);
+    
+}
+
+module.exports = {getAllVehiculos, getTop3, crearVehiculo, filtrarNombre, deleteVehiculo, editVehiculo, getVehiculo};

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-//const config = require('./config/config.js')
 require('dotenv').config();
 
 function connectDB() {
@@ -10,7 +9,7 @@ function connectDB() {
         keepAlive: true,
         useUnifiedTopology: true
       },
-      );
+    );
     console.log('MongoDB Connected...');
   } catch (err) {
     console.log(err);

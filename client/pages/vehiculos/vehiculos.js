@@ -17,7 +17,7 @@ let agregarCards = function(element){
     card.classList.add("card");
     card.innerHTML = `
         <div class="contenedorTitulo">
-            <p class="nombre">${element.piloto}</p>
+            <p class="nombre">${element.piloto.nombre}</p>
         </div>
         <div class="contenedorImagen">
             <img class="img" src="../.${element.foto}">
@@ -47,7 +47,7 @@ const filtrar = async () => {
             else{
                 const noEncontrado = {
                     "foto":"./../assets/img/sinResultado.png",
-                    "piloto": "NO SE ENCONTRARON PILOTOS"
+                    "piloto.nombre": "NO SE ENCONTRARON PILOTOS"
                 };
                 grid.innerHTML="";
                 agregarCards(noEncontrado);
@@ -56,7 +56,7 @@ const filtrar = async () => {
         else {
             const noEncontrado = {
                 "foto":"./../assets/img/sinResultado.png",
-                "piloto": "ALGO SALIO MAL!!!! Error en la consulta"
+                "piloto.nombre": "ALGO SALIO MAL!!!! Error en la consulta"
             };
             grid.innerHTML="";
             agregarCards(noEncontrado);
