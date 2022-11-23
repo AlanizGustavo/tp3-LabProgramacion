@@ -28,10 +28,10 @@ posiciones.forEach(async (element,index) => {
                             <img class="img" src="../.${element.foto}">
                         </div>
                         <div>
-                            <p class="nombre">${element.piloto}</p>
-                            <p class="nombre">${element.copiloto}</p>
+                            <p class="nombre">${element.piloto.nombre}</p>
+                            <p class="nombre">${element.copiloto.nombre}</p>
                             <p class="nombre">${element.modelo}</p>
-                            <p class="nombre">Año: ${element.ano}</p>
+                            <p class="nombre">Año: ${element.anio}</p>
                         </div>
                         <div class="contenedorPuntaje"> 
                             <p class="nombre">${element.puntaje}</p>

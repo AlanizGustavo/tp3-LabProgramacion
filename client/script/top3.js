@@ -15,7 +15,7 @@ const top3 = async () => {
                 `<h3>${i+1}°</h3>
                 <div class="cardTop3">
                     <div class="contenedorTitulo">
-                        <p class="nombre">${vehiculo.piloto}</p>
+                        <p class="nombre">${vehiculo.piloto.nombre}</p>
                     </div>
                     <div class="contenedorImagen">
                         <img class="img" src="${vehiculo.foto}">
