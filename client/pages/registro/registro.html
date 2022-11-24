@@ -55,6 +55,7 @@
 
             <div class="botones">
                 <button id="registroPersona">Registar Persona</button>
+                <button id="openPutPersonas">Editar Personas</button>
                 <button id="registroAuto">Registrar Auto</button>
             </div>
             <section id="tablaAdmin" class="tablaAdmin">
@@ -66,21 +67,28 @@
                     <p>Eliminar</p>
                 </div>
             </section>
+            <div class="formularioPersona" id="modalPutPersonas">
+                <div class="modal">
+                    <h1>Registro de Persona</h1>
+                    <input type="search" name="persona" id="buscarPersona">
+                    <input type="button" id="closePutPersonas" class="close" value="Cerrar">
+                </div>
+            </div>
             <div class="formularioPersona" id="formularioPersona">
                 <div class="modal">
                     <h1>Registro de Persona</h1>
-                    <form action="/registrarPersona" method="post">
+                    <form action="/api/personas/crearPersona" method="post">
                         <label for="nya" class="form-label">Nombre completo</label>
-                        <input name="nya" name="nya" type="text">
+                        <input name="nombre" type="text">
 
                         <label for="email" class="form-label">E-mail</label>
-                        <input name="email" name="email" type="text">
+                        <input name="email" type="text">
 
                         <label for="edad" class="form-label">Edad</label>
-                        <input name="edad" name="edad" type="text">
+                        <input name="edad" type="text">
 
                         <div class="openClose">
-                            <input type="submit" class="botonEnviar" value="Registrar persona">
+                            <input type="submit" class="botonEnviar" value="Registrar persona" id="botonEnviar">
                             <input type="button" id="closePersona" class="close" value="Cerrar">
                         </div>
                     </form>
@@ -100,10 +108,12 @@
                         <input id="anio" name="anio" type="number">
 
                         <label for="piloto" class="form-label">Piloto</label>
-                        <input id="piloto" name="piloto" type="text">
+                        <input class="searchBox" id="searchBoxPiloto" type="text" placeholder="Buscar" name="nombre">
+                        <ul id="list"></ul>
 
                         <label for="copiloto" class="form-label">Copiloto</label>
-                        <input id="copiloto" name="copiloto" type="text">
+                        <input class="searchBox" id="searchBoxCopiloto" type="text" placeholder="Buscar" name="nombre">
+                        <ul id="list"></ul>
 
                         <label for="puntaje" class="form-label">Puntaje</label>
                         <input id="puntaje" name="puntaje" type="number">
@@ -154,8 +164,8 @@
             </div>
             <p class="copyright">&copy; 2022 CAACEP, todos los derechos reservados</p>
         </footer>
-        <script type="module" src="vehiculos.js"></script>
         <script type="module" src="../../script/hamburger.js"></script>
+        <script type="module" src="vehiculos.js"></script>
         <script src="registros.js"></script>
     </body>
 
