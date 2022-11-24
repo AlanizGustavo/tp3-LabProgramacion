@@ -923,6 +923,7 @@ h2 {
 
 
 .tablaAdmin {
+    flex: 1;
     margin: 2rem;
     display: flex;
     flex-direction: column;
@@ -930,7 +931,16 @@ h2 {
     border-bottom-style: solid;
 }
 
-.imagenTablaAdmin {
+.filaTablaAdmin {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom-style: solid;
+    border-color: rgb(165, 167, 168);
+}
+
+.filaTablaAdmin img {
     width: 15vw;
     margin: auto;
     display: block;

@@ -7,7 +7,7 @@ let gridPosiciones = document.querySelector('#tablaAdmin');
 
 posiciones.forEach(async (element, index) => {
     const linea = document.createElement("div");
-    linea.classList.add("filaTabla");
+    linea.classList.add("filaTablaAdmin");
     linea.innerHTML = `
                     <div><p>${index + 1}</p></div>
                     <div><img class="img" src="../.${element.foto}" alt="${element.marca} - ${element.modelo}" class="imagenTablaAdmin"></div>
@@ -20,6 +20,6 @@ posiciones.forEach(async (element, index) => {
                         <p class="nombre">Puntaje: ${element.puntaje}</p>
                     </div>
                     <div><button class="botonEditar" id="botonEditar" onclick="editarAuto('${element._id}')">✏️</button></div>
-                    <div><button class="botonEliminar" class="botonEliminar">❌</button></div>`;
+                    <div><button class="botonEliminar" id="botonEliminar" onclick="eliminarAuto('${element._id}')">❌</button></div>`;
     gridPosiciones.appendChild(linea);
 });
