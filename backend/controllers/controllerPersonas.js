@@ -1,5 +1,5 @@
 const modeloPersona = require('../models/personaSchema');
-const { crearPersona, getPersona, deletePersona } = require('../services/servicePersona');
+const { crearPersona, getPersona, deletePersona, editPersona } = require('../services/servicePersona');
 
 const controllerPersona = async (req, res) => {
     const data = req.body;
@@ -15,5 +15,12 @@ const eliminarPersona = async (req,res) => {
     res.send(await deletePersona(id));
 }
 
+const editarPersona = async (req,res) => {
+    const id = req.params;
+    const data = req.body;
+    res.send(await editPersona(id,data));
+}
 
-module.exports = {controllerPersona, obtenerPersonas, eliminarPersona};
+
+
+module.exports = {controllerPersona, obtenerPersonas, eliminarPersona, editarPersona};
