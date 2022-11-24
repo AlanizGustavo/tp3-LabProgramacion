@@ -1,8 +1,15 @@
-const {getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo} = require('../services/serviceVehiculos');
+const {getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos} = require('../services/serviceVehiculos');
 
 
 const filtrado = async (req, res) => {
-    res.send(await getAllVehiculos());
+    const cantidad = req.query.cantidad;
+    const from = req.query.from;
+    if(cantidad && from ){
+        res.send(await getCantidadVehiculos(cantidad,from));
+    }
+    else{
+        res.send(await getAllVehiculos());
+    }
 };
 
 const posiciones = async (req, res) => {
