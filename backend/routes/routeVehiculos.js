@@ -1,9 +1,10 @@
 const express = require('express');
-const {filtrado, posiciones, filtroNombre, agregarVehiculo, editarVehiculo, eliminarVehiculo, obtenerVehiculo} = require('../controllers/controllerVehiculos');
+const { filtrado, posiciones, filtroNombre, agregarVehiculo, editarVehiculo, eliminarVehiculo, obtenerVehiculo } = require('../controllers/controllerVehiculos');
+const validacionAuto = require('../middleware/validacionAuto');
 
 const router = express.Router();
 
-router.post('/api/vehiculos/crearVehiculos', agregarVehiculo);
+router.post('/api/vehiculos/crearVehiculos', validacionAuto, agregarVehiculo);
 router.delete('/api/vehiculos/eliminarVehiculo/:id', eliminarVehiculo);
 router.patch('/api/vehiculos/editarVehiculo/:id', editarVehiculo)
 router.get('/api/vehiculos', filtrado);

@@ -6,4 +6,4 @@ const controllerPersona = async (req, res) => {
     res.send(await crearPersona(data));
 }
 
-module.exports = {controllerPersona};
+module.exports = { controllerPersona };
