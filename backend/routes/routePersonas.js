@@ -1,10 +1,10 @@
 const express = require('express');
-const { controllerPersona, obtenerPersonas, eliminarPersona } = require('../controllers/controllerPersonas');
-const { validacionPersona } = require('../middleware/validacionPersona');
+const { controllerPersona, obtenerPersonas, eliminarPersona, editarPersona } = require('../controllers/controllerPersonas');
 
 const router = express.Router();
 
-router.post('/api/personas/crearPersona',validacionPersona, controllerPersona);
+router.patch('/api/personas/editarPersona/:id', editarPersona);
+router.post('/api/personas/crearPersona', controllerPersona);
 router.delete('/api/personas/eliminarPersona/:id', eliminarPersona);
 router.get('/api/personas', obtenerPersonas)
 

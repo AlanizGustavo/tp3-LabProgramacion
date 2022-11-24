@@ -21,5 +21,8 @@ const deletePersona = async (id) => {
     return await modeloPersona.findOneAndDelete({_id: new mongoose.mongo.ObjectId(id)});
 }
 
+const editPersona = async (id, data) => {   
+    return await modeloPersona.findByIdAndUpdate({_id: new mongoose.mongo.ObjectId(id)},data);
+}
 
-module.exports = {crearPersona, getPersona, deletePersona};
+module.exports = {crearPersona, getPersona, deletePersona, editPersona};
