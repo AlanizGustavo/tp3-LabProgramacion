@@ -129,4 +129,8 @@ const editVehiculo = async (id, data) => {
     return await modeloVehiculo.findByIdAndUpdate({_id: new mongoose.mongo.ObjectId(id)},data);
 }
 
-module.exports = {getAllVehiculos, getTop3, crearVehiculo, filtrarNombre, deleteVehiculo, editVehiculo, getVehiculo};
+const getCantidadVehiculos = async (cantidad, from) => {   
+    return await modeloVehiculo.find({}).limit(cantidad).skip(from);
+}
+
+module.exports = {getAllVehiculos, getTop3, crearVehiculo, filtrarNombre, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos};

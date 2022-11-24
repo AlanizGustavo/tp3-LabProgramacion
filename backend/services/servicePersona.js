@@ -1,4 +1,5 @@
 const modeloPersona = require('../models/personaSchema');
+const mongoose = require('mongoose');
 
 const crearPersona = async (data) => {
     try {
