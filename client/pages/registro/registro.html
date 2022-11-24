@@ -98,7 +98,8 @@
                         <input name="edad" type="text">
 
                         <div class="openClose">
-                            <input type="submit" class="botonEnviar" value="Registrar persona" id="botonEnviar">
+                            <input type="submit" class="botonEnviar" value="Registrar persona" id="botonEnviar"
+                                onclick="cargaExitosa()">
                             <input type="button" id="closePersona" class="close" value="Cerrar">
                         </div>
                     </form>
@@ -107,7 +108,7 @@
             <div class="formularioAuto" id="formularioAuto">
                 <div class="modal">
                     <h1>Registro de Vehiculo</h1>
-                    <form>
+                    <form action="/api/vehiculos/crearVehiculos" method="post">
                         <label for="marca" class="form-label">Marca</label>
                         <input id="marca" name="marca" type="text">
 
@@ -118,12 +119,10 @@
                         <input id="anio" name="anio" type="number">
 
                         <label for="piloto" class="form-label">Piloto</label>
-                        <input class="searchBox" id="searchBoxPiloto" type="text" placeholder="Buscar" name="nombre">
-                        <ul id="list"></ul>
+                        <select name="piloto" id="pilotoDisponible"></select>
 
                         <label for="copiloto" class="form-label">Copiloto</label>
-                        <input class="searchBox" id="searchBoxCopiloto" type="text" placeholder="Buscar" name="nombre">
-                        <ul id="list"></ul>
+                        <select name="copiloto" id="copilotoDisponible"></select>
 
                         <label for="puntaje" class="form-label">Puntaje</label>
                         <input id="puntaje" name="puntaje" type="number">
@@ -176,8 +175,8 @@
         </footer>
         <script type="module" src="../../script/hamburger.js"></script>
         <script type="module" src="vehiculos.js"></script>
-        <script src="registros.js"></script>
         <script src="personas_ABM.js"></script>
+        <script src="vehiculos_ABM.js"></script>
     </body>
 
 </html>

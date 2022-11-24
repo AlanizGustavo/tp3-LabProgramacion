@@ -6,21 +6,22 @@ const controllerPersona = async (req, res) => {
     res.send(await crearPersona(data));
 }
 
-const obtenerPersonas = async (req,res) => {
+const obtenerPersonas = async (req, res) => {
     res.send(await getPersona());
 }
 
-const eliminarPersona = async (req,res) => {
+const eliminarPersona = async (req, res) => {
     const id = req.params;
     res.send(await deletePersona(id));
 }
 
-const editarPersona = async (req,res) => {
+const editarPersona = async (req, res) => {
     const id = req.params;
+    console.log(id);
     const data = req.body;
-    res.send(await editPersona(id,data));
+    res.send(await editPersona(id, data));
 }
 
 
 
-module.exports = {controllerPersona, obtenerPersonas, eliminarPersona, editarPersona};
+module.exports = { controllerPersona, obtenerPersonas, eliminarPersona, editarPersona };

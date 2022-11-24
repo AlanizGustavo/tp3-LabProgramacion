@@ -20,13 +20,14 @@ async function cargarTablaPersonas() {
 }
 function crearFormulario(persona) {
     let form = document.createElement('form');
-    form.setAttribute('method', 'PATCH');
-    form.setAttribute('action', `http://localhost:9000/api/personas/actualizarPersona/${persona._id}`);
+    form.setAttribute('method', 'patch');
+    form.setAttribute('action', `/api/personas/editarPersona/${persona._id}`);
     form.classList.add('filaABM');
+    console.log(form);
     form.innerHTML = `
-        <input type="text" value="${persona.nombre}" class="columnaABM">
-        <input type="text" value="${persona.email}" class="columnaABM">
-        <input type="number" value="${persona.edad}" class="columnaABM">
+        <input name="nombre" type="text" value="${persona.nombre}" class="columnaABM">
+        <input name="email" type="text" value="${persona.email}" class="columnaABM">
+        <input name="edad" type="number" value="${persona.edad}" class="columnaABM">
         <input type="submit" value="✏️" class="columnaABM">
         <input type="button" value="🗑️" class="columnaABM" onclick="eliminarPersona('${persona._id}')">`
     return form;
@@ -46,4 +47,9 @@ async function eliminarPersona(id) {
         });
         location.reload();
     }
+}
+
+function cargaExitosa() {
+    alert('Carga exitosa');
+    window.location.assign("https://www.google.com");
 }

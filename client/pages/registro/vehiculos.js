@@ -1,5 +1,3 @@
-
-
 const request = await fetch(`http://localhost:9000/api/vehiculos`);
 const posiciones = await request.json();
 

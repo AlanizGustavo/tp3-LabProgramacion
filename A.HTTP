@@ -91,3 +91,14 @@ GET http://localhost:9000/api/personas HTTP/1.1
 Content-Type: application/json
 
 ###
+
+PATCH http://localhost:9000/api/personas/editarPersona/637fac3eebf44d9f66e848ef HTTP/1.1
+Content-Type: application/json
+
+    {
+        "nombre": "Juan",
+        "email": "asd@asd.com",
+        "edad": 30,
+    }
+
+###
