@@ -1,14 +1,4 @@
-const openPutPersonas = document.getElementById('openPutPersonas');
-const modalputPersonas = document.getElementById('modalPutPersonas');
-const closePutPersonas = document.getElementById('closePutPersonas');
 
-openPutPersonas.addEventListener('click', () => {
-    modalputPersonas.classList.add('show');
-});
-
-closePutPersonas.addEventListener('click', () => {
-    modalputPersonas.classList.remove('show');
-});
 
 const openPersona = document.getElementById('registroPersona');
 const modal_container_persona = document.getElementById('formularioPersona');

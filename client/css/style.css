@@ -990,3 +990,46 @@ h2 {
 #list li.hide {
     display: none;
 }
+
+.tablaPersonas {
+    width: 100%;
+}
+
+.ABMpersonasEncabezado {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 2rem;
+    border-bottom-style: solid;
+    border-color: rgb(165, 167, 168);
+}
+
+.headerABM {
+    flex: 1;
+    text-align: center;
+}
+
+.tablaPersonas {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+.filaABM {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+
+.columnaABM {
+    flex: 1;
+}
+
+.modal .filaABM {
+    flex-grow: 1;
+    flex-direction: row;
+}
