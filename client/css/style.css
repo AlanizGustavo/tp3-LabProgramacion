@@ -913,11 +913,24 @@ h2 {
 
 .encabezadoTablaAdmin {
     display: flex;
-    justify-content: space-between;
     padding: 2rem;
     font-size: 2rem;
     border-bottom-style: solid;
     border-color: rgb(165, 167, 168);
+}
+
+.encabezadoTablaAdmin p {
+    width: 100%;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.columnTablaAdmin {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -1040,4 +1053,9 @@ h2 {
     align-items: flex-end;
     width: 100%;
     margin-bottom: 1rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
 }
