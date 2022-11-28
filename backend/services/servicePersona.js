@@ -2,11 +2,7 @@ const modeloPersona = require('../models/personaSchema');
 const mongoose = require('mongoose');
 
 const crearPersona = async (data) => {
-    try {
-        return await modeloPersona.create(data);
-    } catch (error) {
-        throw new Error(error);
-    }
+    return await modeloPersona.create(data);
 }
 
 const getPersona = async (data) => {

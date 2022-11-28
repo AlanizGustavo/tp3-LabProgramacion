@@ -1,9 +1,16 @@
 const modeloPersona = require('../models/personaSchema');
 const { crearPersona, getPersona, deletePersona, editPersona } = require('../services/servicePersona');
 
+// const controllerPersona = async (req, res) => {
+//     const data = req.body;
+//     res.send(await crearPersona(data));
+// }
+
 const controllerPersona = async (req, res) => {
     const data = req.body;
-    res.send(await crearPersona(data));
+    await crearPersona(data)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(403).send({message: error, error: 'El Email ingresado pertenece a un piloto'})});
 }
 
 const obtenerPersonas = async (req,res) => {
