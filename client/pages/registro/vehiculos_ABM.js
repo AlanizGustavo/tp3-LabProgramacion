@@ -1,48 +1,80 @@
-const openAuto = document.getElementById('registroAuto');
 const modal_container_auto = document.getElementById('formularioAuto');
 const closeAuto = document.getElementById('closeAuto');
 
-openAuto.addEventListener('click', async () => {
+async function crearAuto() {
     modal_container_auto.classList.add('show');
-    let listaPilotos = document.getElementById('pilotoDisponible');
-    await mostrarPilotos(listaPilotos);
-    let listaCopilotos = document.getElementById('copilotoDisponible');
-    await mostrarPilotos(listaCopilotos);
-});
+    await mostrarPilotos(document.getElementById('piloto'));
+    await mostrarPilotos(document.getElementById('copiloto'));
+    document.getElementById('FormCrearAuto').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        let autoJson = {
+            marca: document.getElementById('marca').value,
+            modelo: document.getElementById('modelo').value,
+            anio: document.getElementById('anio').value,
+            piloto: document.getElementById('piloto').value,
+            copiloto: document.getElementById('copiloto').value,
+            puntaje: document.getElementById('puntaje').value,
+            foto: document.getElementById('foto').value
+        }
+        let response = await fetch(`http://localhost:9000/api/vehiculos/crearVehiculos`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(autoJson)
+        });
+
+        if (response.status == 200) {
+            location.reload();
+        } else {
+            alert('No se pudo crear el auto')
+        }
+    });
+}
+
+async function editarAuto(id) {
+    modal_container_auto.classList.add('show');
+    mostrarCamposConDatos(await getAuto(id));
+    await mostrarPilotos(document.getElementById('piloto'));
+    await mostrarPilotos(document.getElementById('copiloto'));
+    document.getElementById('FormCrearAuto').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        let autoJson = {
+            marca: document.getElementById('marca').value,
+            modelo: document.getElementById('modelo').value,
+            anio: document.getElementById('anio').value,
+            piloto: document.getElementById('piloto').value,
+            copiloto: document.getElementById('copiloto').value,
+            puntaje: document.getElementById('puntaje').value,
+            foto: document.getElementById('foto').value
+        }
+        let response = await fetch(`http://localhost:9000/api/vehiculos/editarVehiculo/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(autoJson)
+        });
+
+        if (response.status == 200) {
+            location.reload();
+        } else {
+            alert('No se pudo editar el auto')
+        }
+    })
+}
+
 
 closeAuto.addEventListener('click', () => {
     modal_container_auto.classList.remove('show');
 });
 
-const openPersona = document.getElementById('registroPersona');
-const modal_container_persona = document.getElementById('formularioPersona');
-const closePersona = document.getElementById('closePersona');
-
-openPersona.addEventListener('click', () => {
-    modal_container_persona.classList.add('show');
-});
-
-closePersona.addEventListener('click', () => {
-    modal_container_persona.classList.remove('show');
-});
-
-async function editarAuto(id) {
-    const auto = await getAuto(id);
+async function mostrarCamposConDatos(auto) {
+    console.log(auto);
     document.querySelector('#marca').setAttribute('value', auto.marca);
     document.querySelector('#modelo').setAttribute('value', auto.modelo);
     document.querySelector('#anio').setAttribute('value', auto.anio);
-    document.querySelector('#searchBoxPiloto').setAttribute('value', auto.piloto.nombre);
-    document.querySelector('#searchBoxCopiloto').setAttribute('value', auto.copiloto.nombre);
+    document.querySelector('#piloto').setAttribute('value', auto.piloto.nombre);
+    document.querySelector('#copiloto').setAttribute('value', auto.copiloto.nombre);
     document.querySelector('#puntaje').setAttribute('value', auto.puntaje);
     document.querySelector('#foto').setAttribute('value', auto.foto);
-
-    document.querySelector('#closeAuto').addEventListener('click', () => {
-        document.querySelector('#formularioEditarAuto').classList.remove('show');
-    });
-
-    document.querySelector('#formularioAuto').classList.add('show');
-    document.querySelector('#formularioAuto').setAttribute('method', 'PATCH');
-    document.querySelector('#formularioAuto').setAttribute('action', `/api/vehiculos/editarVehiculo/${id}`);
+    document.querySelector('#closeAuto').addEventListener('click', () => { document.querySelector('#formularioEditarAuto').classList.remove('show'); });
 }
 
 async function getAuto(id) {
@@ -52,19 +84,21 @@ async function getAuto(id) {
 }
 
 async function eliminarAuto(id) {
-    await fetch(`http://localhost:9000/api/vehiculos/eliminarVehiculo/${id}`,
-        {
-            method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' }
-        });
+    if (confirm('¿Está seguro que desea eliminar este vehiculo?')) {
+        await fetch(`http://localhost:9000/api/vehiculos/eliminarVehiculo/${id}`,
+            {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+        location.reload;
+    }
 }
 
 
 async function mostrarPilotos(listaPilotos) {
     let pilotos = await getPilotos();
-    pilotos.forEach(async element => {
-        listaPilotos.appendChild(crearOpcion(element.nombre, element._id));
-    });
+    pilotos.forEach(async element => { listaPilotos.appendChild(crearOpcion(element.nombre, element._id)); });
 }
 
 function crearOpcion(nombre, id) {

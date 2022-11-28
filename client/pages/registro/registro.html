@@ -56,11 +56,10 @@
             <div class="botones">
                 <button id="registroPersona">Registar Persona</button>
                 <button id="openPutPersonas">Editar Personas</button>
-                <button id="registroAuto">Registrar Auto</button>
+                <button onclick="crearAuto()">Registrar Auto</button>
             </div>
             <section id="tablaAdmin" class="tablaAdmin">
                 <div class="encabezadoTablaAdmin">
-                    <p>N°</p>
                     <p>Imagen</p>
                     <p>Información</p>
                     <p>Editar</p>
@@ -87,19 +86,18 @@
             <div class="formularioPersona" id="formularioPersona">
                 <div class="modal">
                     <h1>Registro de Persona</h1>
-                    <form action="/api/personas/crearPersona" method="post">
-                        <label for="nya" class="form-label">Nombre completo</label>
-                        <input name="nombre" type="text">
+                    <form id="FormCrearPersona">
+                        <label for="nombreNuevaPersona" class="form-label">Nombre completo</label>
+                        <input id="nombreNuevaPersona" name="nombre" type="text">
 
                         <label for="email" class="form-label">E-mail</label>
-                        <input name="email" type="text">
+                        <input id="emailNuevaPersona" name="email" type="text">
 
                         <label for="edad" class="form-label">Edad</label>
-                        <input name="edad" type="text">
+                        <input id="edadNuevaPersona" name="edad" type="text">
 
                         <div class="openClose">
-                            <input type="submit" class="botonEnviar" value="Registrar persona" id="botonEnviar"
-                                onclick="cargaExitosa()">
+                            <input type="submit" class="botonEnviar" value="Registrar persona" id="botonEnviar">
                             <input type="button" id="closePersona" class="close" value="Cerrar">
                         </div>
                     </form>
@@ -108,7 +106,7 @@
             <div class="formularioAuto" id="formularioAuto">
                 <div class="modal">
                     <h1>Registro de Vehiculo</h1>
-                    <form action="/api/vehiculos/crearVehiculos" method="post">
+                    <form id="FormCrearAuto">
                         <label for="marca" class="form-label">Marca</label>
                         <input id="marca" name="marca" type="text">
 
@@ -119,10 +117,10 @@
                         <input id="anio" name="anio" type="number">
 
                         <label for="piloto" class="form-label">Piloto</label>
-                        <select name="piloto" id="pilotoDisponible"></select>
+                        <select name="piloto" id="piloto"></select>
 
                         <label for="copiloto" class="form-label">Copiloto</label>
-                        <select name="copiloto" id="copilotoDisponible"></select>
+                        <select name="copiloto" id="copiloto"></select>
 
                         <label for="puntaje" class="form-label">Puntaje</label>
                         <input id="puntaje" name="puntaje" type="number">
