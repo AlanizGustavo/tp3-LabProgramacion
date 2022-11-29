@@ -1,10 +1,6 @@
+const { response } = require('express');
 const modeloPersona = require('../models/personaSchema');
 const { crearPersona, getPersona, deletePersona, editPersona } = require('../services/servicePersona');
-
-// const controllerPersona = async (req, res) => {
-//     const data = req.body;
-//     res.send(await crearPersona(data));
-// }
 
 const controllerPersona = async (req, res) => {
     const data = req.body;
@@ -14,18 +10,24 @@ const controllerPersona = async (req, res) => {
 }
 
 const obtenerPersonas = async (req,res) => {
-    res.send(await getPersona());
+    await getPersona()
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(404).send({message: error, error: 'No se encontraron personas'})});
 }
 
 const eliminarPersona = async (req,res) => {
     const id = req.params;
-    res.send(await deletePersona(id));
+    await deletePersona(id)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(404).send({message: error, error: 'No Fue posible eliminar persona'})});
 }
 
 const editarPersona = async (req,res) => {
     const id = req.params;
     const data = req.body;
-    res.send(await editPersona(id,data));
+    await editPersona(id,data)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(409).send({message: error, error: 'No fue posible editar personas'})});
 }
 
 
