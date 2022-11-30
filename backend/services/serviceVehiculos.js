@@ -52,11 +52,8 @@ const getTop3 = async () => {
 }
 
 const crearVehiculo = async (data) => {
-    try {
-        return await modeloVehiculo.create(data);
-    } catch (error) {
-        throw new Error(error);
-    }
+    return await modeloVehiculo.create(data);
+    
 }
 
 const filtrarNombre = async (nombre) => {    

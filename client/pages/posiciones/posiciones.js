@@ -1,4 +1,4 @@
-let gridPosiciones = document.querySelector('#tabla');
+let gridPosiciones = document.querySelector('#filas');
 const btnSig = document.querySelector(".btn-sig");
 const btnAnt = document.querySelector(".btn-ant");
 
@@ -68,7 +68,7 @@ const paginaAnterior = async () => {
     const request = await fetch(`http://localhost:9000/api/vehiculos?cantidad=${filasXPagina}&from=${pagActual * filasXPagina}`);
     const vehiculos = await request.json();
 
-    tabla.innerHTML="";
+    gridPosiciones.innerHTML="";
     
     vehiculos.data.forEach((element,index) => {
         agregarCards(element, index);
@@ -83,7 +83,7 @@ const paginaSiguiente = async () => {
     
     const vehiculos = await request.json();
     
-    tabla.innerHTML="";
+    gridPosiciones.innerHTML="";
     
     vehiculos.data.forEach((element,index) => {
         agregarCards(element, index);

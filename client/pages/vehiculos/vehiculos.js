@@ -16,9 +16,6 @@ const requestInicial = await fetch(`http://localhost:9000/api/vehiculos?cantidad
 const vehiculosInicial = await requestInicial.json();
 
 const totalPaginas = Math.floor( vehiculosInicial.totalElements / cardsXPagina);
-console.log(totalPaginas)
-
-
 
 let cargaInicial = async function(){
     pagActual = 0;
@@ -63,7 +60,9 @@ const filtrar = async () => {
             else{
                 const noEncontrado = {
                     "foto":"./../assets/img/sinResultado.png",
-                    "piloto.nombre": "NO SE ENCONTRARON PILOTOS"
+                    "piloto": {
+                        "nombre": "NO SE ENCONTRARON PILOTOS"
+                    }
                 };
                 grid.innerHTML="";
                 agregarCards(noEncontrado);
@@ -72,7 +71,9 @@ const filtrar = async () => {
         else {
             const noEncontrado = {
                 "foto":"./../assets/img/sinResultado.png",
-                "piloto.nombre": "ALGO SALIO MAL!!!! Error en la consulta"
+                "piloto": {
+                    "nombre": "ALGO SALIO MAL!!!! Error en la consulta"
+                }
             };
             grid.innerHTML="";
             agregarCards(noEncontrado);
