@@ -120,9 +120,9 @@ const getVehiculo = async (id) => {
                 $match: {
                     '_id': new mongoose.mongo.ObjectId(id)
                 }
-            }   
+            },
         ]
-    ).sort({puntaje: 'desc'})
+    ).sort({puntaje: 'desc'});
 }
 
 const editVehiculo = async (id, data) => {   
@@ -130,7 +130,45 @@ const editVehiculo = async (id, data) => {
 }
 
 const getCantidadVehiculos = async (cantidad, from) => {   
-    return await modeloVehiculo.find({}).limit(cantidad).skip(from);
+    return await modeloVehiculo.aggregate(
+        [
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'piloto',
+                        foreignField: '_id',
+                        as: 'piloto'
+                    }
+            },
+            {
+                $unwind:'$piloto'
+            }, 
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'copiloto',
+                        foreignField: '_id',
+                        as: 'copiloto'
+                    }
+            },
+            {
+                $unwind:'$copiloto'
+            },
+            {
+                $sort: {
+                    puntaje: -1
+                }
+            },
+            {
+                $skip: parseInt(from)
+            }, 
+            {
+                $limit: parseInt(cantidad)
+            }
+        ]
+    );
 }
 
 module.exports = {getAllVehiculos, getTop3, crearVehiculo, filtrarNombre, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos};
