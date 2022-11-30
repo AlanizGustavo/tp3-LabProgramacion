@@ -106,7 +106,7 @@
             <div class="formularioAuto" id="formularioAuto">
                 <div class="modal">
                     <h1>Registro de Vehiculo</h1>
-                    <form id="FormCrearAuto">
+                    <form action="/api/vehiculos/crearVehiculos" method="post" enctype="multipart/form-data">
                         <label for="marca" class="form-label">Marca</label>
                         <input id="marca" name="marca" type="text">
 
@@ -126,7 +126,7 @@
                         <input id="puntaje" name="puntaje" type="number">
 
                         <label for="imagen" class="form-label">Imagen</label>
-                        <input id="foto" name="foto" type="text">
+                        <input type="file" name="foto" id="foto" accept="image/*">
 
                         <div class="openClose">
                             <input type="submit" class="botonEnviar" value="Registrar auto">

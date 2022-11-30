@@ -19,10 +19,11 @@ const posiciones = async (req, res) => {
 const filtroNombre = async (req, res) => {
     const nombre = req.params.nombre;
     res.send( await filtrarNombre(nombre));
-}    
+}
 
 const agregarVehiculo = async (req, res) => {
     const data = req.body;
+    data.foto = './assets/img/' + req.file.filename;
     res.send(await crearVehiculo(data));
 
 }

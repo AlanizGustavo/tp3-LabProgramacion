@@ -1,33 +1,9 @@
 const modal_container_auto = document.getElementById('formularioAuto');
-const closeAuto = document.getElementById('closeAuto');
 
 async function crearAuto() {
     modal_container_auto.classList.add('show');
     await mostrarPilotos(document.getElementById('piloto'));
     await mostrarPilotos(document.getElementById('copiloto'));
-    document.getElementById('FormCrearAuto').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        let autoJson = {
-            marca: document.getElementById('marca').value,
-            modelo: document.getElementById('modelo').value,
-            anio: document.getElementById('anio').value,
-            piloto: document.getElementById('piloto').value,
-            copiloto: document.getElementById('copiloto').value,
-            puntaje: document.getElementById('puntaje').value,
-            foto: document.getElementById('foto').value
-        }
-        let response = await fetch(`http://localhost:9000/api/vehiculos/crearVehiculos`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(autoJson)
-        });
-
-        if (response.status == 200) {
-            location.reload();
-        } else {
-            alert('No se pudo crear el auto')
-        }
-    });
 }
 
 async function editarAuto(id) {
@@ -61,12 +37,12 @@ async function editarAuto(id) {
 }
 
 
-closeAuto.addEventListener('click', () => {
+document.getElementById('closeAuto').addEventListener('click', () => {
     modal_container_auto.classList.remove('show');
 });
 
+
 async function mostrarCamposConDatos(auto) {
-    console.log(auto);
     document.querySelector('#marca').setAttribute('value', auto.marca);
     document.querySelector('#modelo').setAttribute('value', auto.modelo);
     document.querySelector('#anio').setAttribute('value', auto.anio);
@@ -74,9 +50,7 @@ async function mostrarCamposConDatos(auto) {
     document.querySelector('#copiloto').setAttribute('value', auto.copiloto.nombre);
     document.querySelector('#puntaje').setAttribute('value', auto.puntaje);
     document.querySelector('#foto').setAttribute('value', auto.foto);
-    document.querySelector('#closeAuto').addEventListener('click', () => { document.querySelector('#formularioEditarAuto').classList.remove('show'); });
 }
-
 async function getAuto(id) {
     const response = await fetch(`http://localhost:9000/api/vehiculos/buscarVehiculo/${id}`);
     const auto = await response.json();
@@ -90,9 +64,9 @@ async function eliminarAuto(id) {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             });
-
-        location.reload;
     }
+
+    location.reload();
 }
 
 
