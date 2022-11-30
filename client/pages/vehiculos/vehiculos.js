@@ -11,17 +11,18 @@ let pagActual = 0;
 btnAnt.disabled = true;
 btnAnt.classList.add("desactivado")
 
-const requestTotal = await fetch(`http://localhost:9000/api/vehiculos`);
-const totalPaginas = Math.floor((await requestTotal.json()).length / cardsXPagina);
-
 const requestInicial = await fetch(`http://localhost:9000/api/vehiculos?cantidad=${cardsXPagina}&from=0`);
 
 const vehiculosInicial = await requestInicial.json();
 
+const totalPaginas = Math.floor( vehiculosInicial.totalElements / cardsXPagina);
+console.log(totalPaginas)
+
+
 
 let cargaInicial = async function(){
     pagActual = 0;
-    vehiculosInicial.forEach( element => {
+    vehiculosInicial.data.forEach( element => {
         agregarCards(element);
     }
 )}
@@ -88,7 +89,7 @@ const paginaAnterior = async () => {
 
     grid.innerHTML="";
     
-    vehiculos.forEach(element => {
+    vehiculos.data.forEach(element => {
         agregarCards(element);
     })
 
@@ -103,7 +104,7 @@ const paginaSiguiente = async () => {
     
     grid.innerHTML="";
     
-    vehiculos.forEach(element => {
+    vehiculos.data.forEach(element => {
         agregarCards(element);
     })
     verificador();

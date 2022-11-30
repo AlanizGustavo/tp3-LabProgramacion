@@ -9,11 +9,10 @@ let filasXPagina = 10;
 let pagActual = 0;
 
 
-const requestTotal = await fetch(`http://localhost:9000/api/vehiculos`);
-const totalPaginas = Math.floor((await requestTotal.json()).length / filasXPagina);
-
 const request = await fetch(`http://localhost:9000/api/vehiculos?cantidad=${filasXPagina}&from=0`);
 const posiciones = await request.json();
+
+const totalPaginas = Math.floor(posiciones.totalElements / filasXPagina);
 
 let puesto = (index) => {
     let pos = `${index + 1 + pagActual*filasXPagina}º `;
@@ -32,7 +31,7 @@ let puesto = (index) => {
 
 const cargaInicial = () => {
     pagActual = 0;
-    posiciones.forEach( (element, index) => {
+    posiciones.data.forEach( (element, index) => {
         agregarCards(element, index);
     })
 }
@@ -71,7 +70,7 @@ const paginaAnterior = async () => {
 
     tabla.innerHTML="";
     
-    vehiculos.forEach((element,index) => {
+    vehiculos.data.forEach((element,index) => {
         agregarCards(element, index);
     })
     
@@ -86,7 +85,7 @@ const paginaSiguiente = async () => {
     
     tabla.innerHTML="";
     
-    vehiculos.forEach((element,index) => {
+    vehiculos.data.forEach((element,index) => {
         agregarCards(element, index);
     })
 

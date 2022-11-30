@@ -130,7 +130,7 @@ const editVehiculo = async (id, data) => {
 }
 
 const getCantidadVehiculos = async (cantidad, from) => {   
-    return await modeloVehiculo.aggregate(
+    const page =  await modeloVehiculo.aggregate(
         [
             {
                 $lookup:
@@ -162,13 +162,17 @@ const getCantidadVehiculos = async (cantidad, from) => {
                 }
             },
             {
-                $skip: parseInt(from)
+                $skip: +from
             }, 
             {
-                $limit: parseInt(cantidad)
+                $limit: +cantidad
             }
         ]
     );
+
+    const totalPage = await modeloVehiculo.countDocuments();
+    return {totalElements : totalPage,
+    data: page}
 }
 
 module.exports = {getAllVehiculos, getTop3, crearVehiculo, filtrarNombre, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos};
