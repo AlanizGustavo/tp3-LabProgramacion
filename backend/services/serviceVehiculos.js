@@ -6,28 +6,28 @@ const getAllVehiculos = async () => {
         [
             {
                 $lookup:
-                    {
-                        from: 'personas',
-                        localField: 'piloto',
-                        foreignField: '_id',
-                        as: 'piloto'
-                    }
+                {
+                    from: 'personas',
+                    localField: 'piloto',
+                    foreignField: '_id',
+                    as: 'piloto'
+                }
             },
             {
                 $unwind:'$piloto'
-            }, 
+            },
             {
                 $lookup:
-                    {
-                        from: 'personas',
-                        localField: 'copiloto',
-                        foreignField: '_id',
-                        as: 'copiloto'
-                    }
+                {
+                    from: 'personas',
+                    localField: 'copiloto',
+                    foreignField: '_id',
+                    as: 'copiloto'
+                }
             },
             {
                 $unwind:'$copiloto'
-            }, 
+            },
         ]
     ).sort({puntaje: 'desc'})
 }
@@ -46,7 +46,7 @@ const getTop3 = async () => {
             },
             {
                 $unwind:'$piloto'
-            }, 
+            },
         ]
     ).sort({puntaje: 'desc'}).limit(3);
 }
@@ -59,7 +59,7 @@ const crearVehiculo = async (data) => {
     }
 }
 
-const filtrarNombre = async (nombre) => {    
+const filtrarNombre = async (nombre) => {
     return await modeloVehiculo.aggregate(
         [
             {
@@ -78,40 +78,40 @@ const filtrarNombre = async (nombre) => {
                 $match: {
                     'piloto.nombre': { $regex: nombre, $options:'i' }
                 }
-            }  
+            }
         ]
     );
-    
+
 }
 
-const deleteVehiculo = async (id) => {   
+const deleteVehiculo = async (id) => {
     return await modeloVehiculo.findOneAndDelete({_id: new mongoose.mongo.ObjectId(id)});
-    
+
 }
 
-const getVehiculo = async (id) => {   
+const getVehiculo = async (id) => {
     return await modeloVehiculo.aggregate(
         [
             {
                 $lookup:
-                    {
-                        from: 'personas',
-                        localField: 'piloto',
-                        foreignField: '_id',
-                        as: 'piloto'
-                    }
+                {
+                    from: 'personas',
+                    localField: 'piloto',
+                    foreignField: '_id',
+                    as: 'piloto'
+                }
             },
             {
                 $unwind:'$piloto'
-            }, 
+            },
             {
                 $lookup:
-                    {
-                        from: 'personas',
-                        localField: 'copiloto',
-                        foreignField: '_id',
-                        as: 'copiloto'
-                    }
+                {
+                    from: 'personas',
+                    localField: 'copiloto',
+                    foreignField: '_id',
+                    as: 'copiloto'
+                }
             },
             {
                 $unwind:'$copiloto'
@@ -120,16 +120,16 @@ const getVehiculo = async (id) => {
                 $match: {
                     '_id': new mongoose.mongo.ObjectId(id)
                 }
-            }   
+            }
         ]
     ).sort({puntaje: 'desc'})
 }
 
-const editVehiculo = async (id, data) => {   
+const editVehiculo = async (id, data) => {
     return await modeloVehiculo.findByIdAndUpdate({_id: new mongoose.mongo.ObjectId(id)},data);
 }
 
-const getCantidadVehiculos = async (cantidad, from) => {   
+const getCantidadVehiculos = async (cantidad, from) => {
     return await modeloVehiculo.find({}).limit(cantidad).skip(from);
 }
 

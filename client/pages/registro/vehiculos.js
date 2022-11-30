@@ -8,7 +8,7 @@ posiciones.forEach(async (element) => {
     linea.classList.add("filaTablaAdmin");
     linea.innerHTML = `
                     <div class="columnTablaAdmin">
-                        <img class="img" src="../.${element.foto}" alt="${element.marca} - ${element.modelo}" class="imagenTablaAdmin">
+                        <img class="img" src="${element.foto}" alt="${element.marca} - ${element.modelo}" class="imagenTablaAdmin">
                     </div>
                     <div class="columnTablaAdmin info">    
                         <p id="marca-${element._id}"    class="nombre">Marca: ${element.marca}</p>

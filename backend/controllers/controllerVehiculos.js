@@ -1,5 +1,6 @@
-const {getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos} = require('../services/serviceVehiculos');
-
+const { getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos } = require('../services/serviceVehiculos');
+const cargarImagen = require('../utils/cargarImagenSv');
+const eliminarImagen = require('../utils/eliminarImagen');
 
 const filtrado = async (req, res) => {
     const cantidad = req.query.cantidad;
@@ -22,10 +23,10 @@ const filtroNombre = async (req, res) => {
 }
 
 const agregarVehiculo = async (req, res) => {
+    await cargarImagen(req);
+    eliminarImagen(req);
     const data = req.body;
-    data.foto = './assets/img/' + req.file.filename;
     res.send(await crearVehiculo(data));
-
 }
 
 const editarVehiculo = async (req, res) => {
