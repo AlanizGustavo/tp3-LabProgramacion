@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/api/vehiculos/crearVehiculos', cargaImagen, validacionAuto, agregarVehiculo);
 router.delete('/api/vehiculos/eliminarVehiculo/:id', eliminarVehiculo);
-router.patch('/api/vehiculos/editarVehiculo/:id', validacionAuto, editarVehiculo)
+router.post('/api/vehiculos/editarVehiculo/:id', cargaImagen, editarVehiculo)
 router.get('/api/vehiculos', filtrado);
 router.get('/api/vehiculos/top3', posiciones);
 router.get('/api/vehiculos/:nombre', filtroNombre);

@@ -11,31 +11,8 @@ async function editarAuto(id) {
     mostrarCamposConDatos(await getAuto(id));
     await mostrarPilotos(document.getElementById('piloto'));
     await mostrarPilotos(document.getElementById('copiloto'));
-    document.getElementById('FormCrearAuto').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        let autoJson = {
-            marca: document.getElementById('marca').value,
-            modelo: document.getElementById('modelo').value,
-            anio: document.getElementById('anio').value,
-            piloto: document.getElementById('piloto').value,
-            copiloto: document.getElementById('copiloto').value,
-            puntaje: document.getElementById('puntaje').value,
-            foto: document.getElementById('foto').value
-        }
-        let response = await fetch(`http://localhost:9000/api/vehiculos/editarVehiculo/${id}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(autoJson)
-        });
-
-        if (response.status == 200) {
-            location.reload();
-        } else {
-            alert('No se pudo editar el auto')
-        }
-    })
+    document.querySelector('#FormCrearAuto').setAttribute('action', `/api/vehiculos/editarVehiculo/${id}`);
 }
-
 
 document.getElementById('closeAuto').addEventListener('click', () => {
     modal_container_auto.classList.remove('show');
@@ -66,7 +43,13 @@ async function eliminarAuto(id) {
             });
     }
 
-    location.reload();
+    if (response.status == 200) {
+        alert('El vehiculo se ha eliminado correctamente');
+        location.reload();
+    } else {
+        alert('No se pudo eliminar el auto')
+    }
+
 }
 
 

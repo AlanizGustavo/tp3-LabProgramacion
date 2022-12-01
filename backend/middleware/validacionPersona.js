@@ -1,9 +1,20 @@
 const { body, validationResult } = require('express-validator')
 
-const validacionPersona = [
-    body('nombre').isLength({ min: 3 }).withMessage('El nombre debe tener al menos 3 caracteres'),
-    body('edad').isInt({ min: 18, max: 99 }).withMessage('La edad debe ser un número entre 18 y 99'),
-    body('email').isEmail().withMessage('El email debe ser válido'),
+const validacionCrearPersona = [
+    body('nombre')
+        .notEmpty().withMessage('El nombre es obligatorio')
+        .isString().withMessage('El nombre debe ser un texto')
+        .isLength({ min: 3, max: 50 }).withMessage('El nombre debe tener entre 3 y 50 caracteres')
+        .matches(/^[a-zA-Z ]*$/).withMessage('El nombre no puede contener simbolos'),
+
+    body('edad')
+        .notEmpty().withMessage('La edad es obligatoria')
+        .isInt({ min: 0, max: 120 }).withMessage('La edad debe ser un número entero entre 0 y 120'),
+
+    body('email')
+        .notEmpty().withMessage('El email es obligatorio')
+        .isEmail().withMessage('El email debe ser válido')
+        .isLength({ min: 3, max: 50 }).withMessage('El email debe tener entre 3 y 50 caracteres'),
 
     (req, res, next) => {
         const errors = validationResult(req);
@@ -11,4 +22,4 @@ const validacionPersona = [
         next();
     }
 ]
-module.exports = { validacionPersona } 
+module.exports = { validacionPersona: validacionCrearPersona } 
