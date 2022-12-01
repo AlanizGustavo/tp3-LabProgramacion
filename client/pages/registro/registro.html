@@ -4,22 +4,24 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Imagenes de los mejores autos clasicos">
-        <meta name="author" content="Alaniz Gustavo y Bustamante Leonel">
-        <meta name="copyright" content="CAACEP">
+        <meta name="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" name="description" content="Imagenes de los mejores autos clasicos">
+        <meta name="author" name="author" content="Alaniz Gustavo y Bustamante Leonel">
+        <meta name="copyright" name="copyright" content="CAACEP">
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://alanizgustavo.github.io/tp3-LabProgramacion/">
         <meta property="og:title" content="CAACEP - Media">
         <meta property="og:description" content="Imagenes de los mejores autos clasicos">
-        <meta property="og:image" content="https://github.com/AlanizGustavo/tp3-LabProgramacion/blob/main/assets/img/Logo_caacep2.png?raw=true">
+        <meta property="og:image"
+            content="https://github.com/AlanizGustavo/tp3-LabProgramacion/blob/main/assets/img/Logo_caacep2.png?raw=true">
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://alanizgustavo.github.io/tp3-LabProgramacion/">
         <meta property="twitter:title" content="CAACEP - Media">
         <meta property="twitter:description" content="Imagenes de los mejores autos clasicos">
-        <meta property="twitter:image" content="https://github.com/AlanizGustavo/tp3-LabProgramacion/blob/main/assets/img/Logo_caacep2.png?raw=true"> 
+        <meta property="twitter:image"
+            content="https://github.com/AlanizGustavo/tp3-LabProgramacion/blob/main/assets/img/Logo_caacep2.png?raw=true">
         <!-- favIcon -->
         <link rel="shortcut icon" href="../../assets/img/Logo_caacep.png">
         <link rel="stylesheet" href="../../css/style.css">
@@ -33,34 +35,96 @@
                     <a href="../../index.html"> <img src="../../assets/img/Logo_caacep.png" alt="Logo CAACEP"> </a>
                     <p>Club de Automoviles Antiguos, Clasicos y Especiales de la Patagonia</p>
                 </div>
-                <ul>
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="../vehiculos/vehiculos.html">Pilotos</a></li>
-                    <li><a href="../posiciones/tabla.html">Tabla</a></li>
-                    <li><a href="#">Media</a></li>
-                </ul>
-                <button class="ham" type="button">
-                    <span class="barra1"></span>
-                    <span class="barra2"></span>
-                    <span class="barra3"></span>
-                </button>
             </nav>
         </header>
         <main>
             <div class="titulo">
-                <h1>Media</h1>
+                <h1>Registro de datos</h1>
             </div>
-            <section id="media-grid-template" class="media-grid-template">
-                <img class="foto1 img" src="../../assets/img/toro.jpeg" alt="Torino Rojo">
-                <img class="foto2 img" src="https://i.ibb.co/kJG69YM/9bd5c2c883e8.jpg" alt="Dodge Challenger">
-                <img class="foto3" src="https://i.ibb.co/kJG69YM/9bd5c2c883e8.jpg" alt="Fiat 600">
-                <img class="foto4" src="https://i.ibb.co/MSJDJqh/43a7bb230b4c.jpg" alt="Ford Mercury">
-                <img class="foto5" src="https://i.ibb.co/TYH8mZD/2a43313e1539.jpg" alt="Ford T">
-                <img class="foto6" src="https://i.ibb.co/zmz5G5H/807104680316.jpg" alt="Buggy">
-                <img class="foto7" src="https://i.ibb.co/zmz5G5H/807104680316.jpg" alt="Ford Mustang">
-                <img class="foto8" src="https://i.ibb.co/hLpyWVb/cf873373bfaa.jpg" alt="Citroen 3CV">
-                <img class="foto9" src="../../assets/img/autoEnRuta.JPG" alt="DKWF94">
+
+            <div class="botones">
+                <button id="registroPersona">Registar Persona</button>
+                <button id="openPutPersonas">Editar Personas</button>
+                <button onclick="crearAuto()">Registrar Auto</button>
+            </div>
+            <section id="tablaAdmin" class="tablaAdmin">
+                <div class="encabezadoTablaAdmin">
+                    <p>Imagen</p>
+                    <p>Información</p>
+                    <p>Editar</p>
+                    <p>Eliminar</p>
+                </div>
             </section>
+            <div class="formularioPersona" id="modalPutPersonas">
+                <div class="modal">
+                    <div class="tituloModal">
+                        <h1>Registro de Persona</h1>
+                        <input type="button" id="closePutPersonas" class="close" value="x">
+                    </div>
+                    <div class="tablaPersonas" id="tablaPutPersonas">
+                        <div class="ABMpersonasEncabezado">
+                            <p class="headerABM">Nombre</p>
+                            <p class="headerABM">Email</p>
+                            <p class="headerABM">Edad</p>
+                            <p class="headerABM">Editar</p>
+                            <p class="headerABM">Eliminar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formularioPersona" id="formularioPersona">
+                <div class="modal">
+                    <h1>Registro de Persona</h1>
+                    <form id="FormCrearPersona">
+                        <label for="nombreNuevaPersona" class="form-label">Nombre completo</label>
+                        <input id="nombreNuevaPersona" name="nombre" type="text">
+
+                        <label for="email" class="form-label">E-mail</label>
+                        <input id="emailNuevaPersona" name="email" type="text">
+
+                        <label for="edad" class="form-label">Edad</label>
+                        <input id="edadNuevaPersona" name="edad" type="text">
+
+                        <div class="openClose">
+                            <input type="submit" class="botonEnviar" value="Registrar persona" id="botonEnviar">
+                            <input type="button" id="closePersona" class="close" value="Cerrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="formularioAuto" id="formularioAuto">
+                <div class="modal">
+                    <h1>Registro de Vehiculo</h1>
+                    <form id="FormCrearAuto" action="/api/vehiculos/crearVehiculos" method="post"
+                        enctype="multipart/form-data">
+                        <label for="marca" class="form-label">Marca</label>
+                        <input id="marca" name="marca" type="text">
+
+                        <label for="modelo" class="form-label">Modelo</label>
+                        <input id="modelo" name="modelo" type="text">
+
+                        <label for="anio" class="form-label">Año</label>
+                        <input id="anio" name="anio" type="number">
+
+                        <label for="piloto" class="form-label">Piloto</label>
+                        <select name="piloto" id="piloto"></select>
+
+                        <label for="copiloto" class="form-label">Copiloto</label>
+                        <select name="copiloto" id="copiloto"></select>
+
+                        <label for="puntaje" class="form-label">Puntaje</label>
+                        <input id="puntaje" name="puntaje" type="number">
+
+                        <label for="imagen" class="form-label">Imagen</label>
+                        <input type="file" name="foto" id="foto" accept="image/*">
+
+                        <div class="openClose">
+                            <input type="submit" class="botonEnviar" value="Registrar auto">
+                            <input type="button" id="closeAuto" class="close" value="Cerrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="logo">
@@ -98,6 +162,9 @@
             <p class="copyright">&copy; 2022 CAACEP, todos los derechos reservados</p>
         </footer>
         <script type="module" src="../../script/hamburger.js"></script>
+        <script type="module" src="vehiculos.js"></script>
+        <script src="personas_ABM.js"></script>
+        <script src="vehiculos_ABM.js"></script>
     </body>
 
 </html>

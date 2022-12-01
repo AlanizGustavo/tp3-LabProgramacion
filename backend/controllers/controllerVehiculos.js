@@ -1,7 +1,6 @@
-const {getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos} = require('../services/serviceVehiculos');
+const { getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos } = require('../services/serviceVehiculos');
 const cargarImagen = require('../utils/cargarImagenSv');
 const eliminarImagen = require('../utils/eliminarImagen');
-
 
 const filtrado = async (req, res) => {
     const cantidad = req.query.cantidad;
@@ -13,8 +12,8 @@ const filtrado = async (req, res) => {
     }
     else{
         await getAllVehiculos()
-        .then(response => {res.send(response)})
-        .catch(error => {res.status(403).send({message: error, error: 'No se encontraron vehiculos '})});
+            .then(response => {res.send(response)})
+            .catch(error => {res.status(403).send({message: error, error: 'No se encontraron vehiculos '})});
     }
 };
 
@@ -29,7 +28,7 @@ const filtroNombre = async (req, res) => {
     await filtrarNombre(nombre)
         .then(response => {res.send(response)})
         .catch(error => {res.status(404).send({message: error, error: 'No hay coincidencias con el nombre ingresado'})});
-}    
+}
 
 const agregarVehiculo = async (req, res) => {
     await cargarImagen(req);
@@ -38,10 +37,14 @@ const agregarVehiculo = async (req, res) => {
     await crearVehiculo(data)
         .then(response => {res.send(response)})
         .catch(error => {res.status(403).send({message: error, error: 'No es posible incorporar el vechiculo'})});
-    
+
 }
 
 const editarVehiculo = async (req, res) => {
+    if (req.file) {
+        await cargarImagen(req);
+        eliminarImagen(req);
+    }
     const id = req.params;
     const data = req.body;
     await editVehiculo(id,data)

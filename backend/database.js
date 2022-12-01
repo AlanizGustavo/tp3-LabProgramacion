@@ -9,7 +9,7 @@ function connectDB() {
         keepAlive: true,
         useUnifiedTopology: true
       },
-      );
+    );
     console.log('MongoDB Connected...');
   } catch (err) {
     console.log(err);

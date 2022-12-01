@@ -272,7 +272,7 @@ svg {
     margin-right: 2rem;
 }
 
-.paginacion button:hover:not(.desactivado){
+.paginacion button:hover:not(.desactivado, .invisible){
     box-shadow: 0px 0px 15px 0px;
     cursor: pointer;
 }
@@ -286,6 +286,9 @@ svg {
     filter: grayscale(1);
 }
 
+.invisible{
+    opacity: 0;
+}
 
 
 .grid {
@@ -396,7 +399,7 @@ svg {
     height: auto;
 }
 
-.imagen-fondo2{
+.imagen-fondo2 {
     display: none;
 }
 
@@ -528,7 +531,7 @@ h2 {
     border-radius: 15px;
     margin: 10vw;
     background-color: rgb(238, 236, 236);
-    box-shadow: 0px 0px 10px 0px ;
+    box-shadow: 0px 0px 10px 0px;
 
 }
 
@@ -539,6 +542,7 @@ h2 {
     border-bottom-style: solid;
     border-color: rgb(204, 207, 209);
     border-width: 1px;
+    overflow: hidden;
 }
 
 .filaTabla div {
@@ -577,32 +581,32 @@ h2 {
     text-decoration-color: gray;
 }
 
-.tabla .contenedorImagen img{
+.contenedorImagen img {
     border-radius: 10px;
 }
 
-.puesto{
+.puesto {
     text-align: center;
     font-size: 4rem;
 }
 
-.media-grid-template{
+.media-grid-template {
     display: grid;
     width: 100%;
     margin-bottom: 5rem;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: 250px;
     gap: 2rem;
     overflow: hidden;
 }
 
-.media-grid-template img{
+.media-grid-template img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.media-grid-template img:hover{
+.media-grid-template img:hover {
     transform: scale(1.5);
     transition: transform 0.5s ease-in-out;
     box-shadow: 0 0 35px 5px black;
@@ -610,87 +614,109 @@ h2 {
 
 @keyframes deslizarIzq {
     from {
-      margin-left: -100%;
-    opacity: 0%; }
+        margin-left: -100%;
+        opacity: 0%;
+    }
+
     to {
-      margin-bottom: 100%; 
-    opacity: 100%;} 
+        margin-bottom: 100%;
+        opacity: 100%;
+    }
 }
 
 @keyframes deslizarDer {
     from {
-      margin-left: 100%;
-    opacity: 0%; }
+        margin-left: 100%;
+        opacity: 0%;
+    }
+
     to {
-      margin-right: 0%; 
-    opacity: 100%;} 
+        margin-right: 0%;
+        opacity: 100%;
+    }
 }
+
 @keyframes deslizarAbajo {
     from {
         margin-top: 100%;
-      opacity: 0%; }
-      to {
-        margin-top: 0%; 
-      opacity: 100%;} 
-}
-@keyframes deslizarArriba {
-    from {
-      margin-top: -100%;
-    opacity: 0%; }
+        opacity: 0%;
+    }
+
     to {
-      margin-top: 0%; 
-    opacity: 100%;} 
+        margin-top: 0%;
+        opacity: 100%;
+    }
 }
 
-.foto1{
+@keyframes deslizarArriba {
+    from {
+        margin-top: -100%;
+        opacity: 0%;
+    }
+
+    to {
+        margin-top: 0%;
+        opacity: 100%;
+    }
+}
+
+.foto1 {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
     animation-duration: 1.5s;
     animation-name: deslizarIzq;
 }
-.foto2{
+
+.foto2 {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
     animation-duration: 1.5s;
     animation-name: deslizarIzq;
 }
-.foto3{
+
+.foto3 {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     animation-duration: 1.5s;
     animation-name: deslizarArriba;
 }
-.foto4{
+
+.foto4 {
     grid-column: 5 / 6;
     grid-row: 2 / 3;
     animation-duration: 1.5s;
     animation-name: deslizarDer;
 }
-.foto5{
+
+.foto5 {
     grid-column: 2 / 5;
     grid-row: 3 / 4;
     animation-duration: 1.5s;
     animation-name: deslizarIzq;
 }
-.foto6{
+
+.foto6 {
     grid-column: 1 / 3;
     grid-row: 4 / 5;
     animation-duration: 1.5s;
     animation-name: deslizarIzq;
 }
-.foto7{
+
+.foto7 {
     grid-column: 3 / 5;
     grid-row: 4 / 6;
     animation-duration: 1.5s;
     animation-name: deslizarAbajo;
 }
-.foto8{
+
+.foto8 {
     grid-column: 5 / 6;
     grid-row: 3 / 5;
     animation-duration: 1.5s;
     animation-name: deslizarDer;
 }
-.foto9{
+
+.foto9 {
     grid-column: 4 / 6;
     grid-row: 1 / 2;
     animation-duration: 1.5s;
@@ -699,20 +725,61 @@ h2 {
 
 /* MEDIA QUERYS */
 
+@media (max-width: 455px) {
+    .botonEditar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEditar svg{
+         width: 20px;
+         height: 20px;
+     }
+
+    .botonEliminar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEliminar svg{
+         width: 20px;
+         height: 20px;
+     }
+}    
+
+@media (min-width:455px) and (max-width:654px) {
+    .botonEditar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEditar svg{
+         width: 30px;
+         height: 30px;
+     }
+
+    .botonEliminar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEliminar svg{
+         width: 30px;
+         height: 30px;
+     }
+} 
+
 @media (max-width: 654px) {
-    .txtTop3{
+    .txtTop3 {
         padding-left: 0;
         text-align: center;
     }
-    .texto-club a{
+
+    .texto-club a {
         font-size: 3rem;
     }
 
-    .logo p{
+    .logo p {
         display: none;
     }
 
-    footer .nav-header li{
+    footer .nav-header li {
         padding: 1rem 2rem;
     }
 
@@ -720,7 +787,7 @@ h2 {
         text-align: center;
     }
 
-    .encabezadoTabla p{
+    .encabezadoTabla p {
         font-size: 2rem;
     }
 
@@ -730,24 +797,34 @@ h2 {
 
     .imagen-fondo2 {
         display: flex;
-        width:auto;
+        width: auto;
         height: 100vh;
     }
 
+    .columnTablaAdmin .nombre {
+        font-size: 1.5rem;
+    }
+
 }
+
 @media (min-width:655px) and (max-width: 1600px) {
-    .txtTop3{
+    .txtTop3 {
         padding-left: 0;
         text-align: center;
     }
 
-    .encabezadoTabla p{
-        font-size: 4rem;
+    .encabezadoTabla p {
+        font-size: 3rem;
     }
+
+    .columnTablaAdmin .nombre {
+        font-size: 1.8rem;
+    }
+
 }
 
 @media (max-width: 900px) {
-    .media-grid-template{
+    .media-grid-template {
         display: grid;
         width: 100%;
         margin-bottom: 5rem;
@@ -757,62 +834,336 @@ h2 {
         padding: 1rem;
     }
 
-    .media-grid-template img{
+    .media-grid-template img {
         border-radius: 10px;
     }
 
-    .foto1{
+    .foto1 {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         animation-duration: 1.5s;
         animation-name: deslizarIzq;
     }
-    .foto2{
+
+    .foto2 {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         animation-duration: 1.5s;
         animation-name: deslizarIzq;
     }
-    .foto3{
+
+    .foto3 {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         animation-duration: 1.5s;
         animation-name: deslizarArriba;
     }
-    .foto4{
+
+    .foto4 {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
         animation-duration: 1.5s;
         animation-name: deslizarDer;
     }
-    .foto5{
+
+    .foto5 {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
         animation-duration: 1.5s;
         animation-name: deslizarIzq;
     }
-    .foto6{
+
+    .foto6 {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
         animation-duration: 1.5s;
         animation-name: deslizarIzq;
     }
-    .foto7{
+
+    .foto7 {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
         animation-duration: 1.5s;
         animation-name: deslizarAbajo;
     }
-    .foto8{
+
+    .foto8 {
         grid-column: 2 / 3;
         grid-row: 4 / 5;
         animation-duration: 1.5s;
         animation-name: deslizarDer;
     }
-    .foto9{
+
+    .foto9 {
         grid-column: 1 / 3;
         grid-row: 5 / 6;
         animation-duration: 1.5s;
         animation-name: deslizarDer;
     }
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botones button:hover {
+    background-color: #FF385C;
+    transition: background-color 0.2s;
+}
+
+.formularioPersona,
+.formularioAuto {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal {
+    background-color: #fff;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+    margin-top: 16rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    background-color: #e44040;
+    width: fit-content;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 25px;
+}
+
+.botonEnviar {
+    background-color: #47a386;
+    border: 0;
+    width: fit-content;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 25px;
+
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal h1 {
+    margin: 0;
+}
+
+.modal label {
+    opacity: 0.7;
+    font-size: 2rem;
+}
+
+.modal input {
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.openClose {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.encabezadoTablaAdmin {
+    display: flex;
+    padding: 2rem;
+    font-size: 2rem;
+    border-bottom-style: solid;
+    border-color: rgb(165, 167, 168);
+}
+
+.encabezadoTablaAdmin p {
+    width: 100%;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.columnTablaAdmin {
+    width: 100%;
+    /* flex-grow: 1; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tablaAdmin {
+    flex: 1;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    border-bottom-style: solid;
+}
+
+.filaTablaAdmin {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom-style: solid;
+    border-color: rgb(165, 167, 168);
+}
+
+.filaTablaAdmin img {
+    width: 15vw;
+    margin: auto;
+    display: block;
+}
+
+.botonEditar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #47a386;
+    border: 0;
+    width: fit-content;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;;
+}
+
+.botonEditar svg {
+    fill: white;
+}
+
+.botonEliminar {
+    cursor: pointer;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  #FF385C;
+    border: 0;
+    width: fit-content;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.botonEliminar svg {
+    fill: white;
+}
+
+.botonEditar:hover, .botonEliminar:hover{
+    box-shadow: 0px 0px 25px 0px rgb(0, 0, 0);
+}
+
+#searchBox {
+    box-sizing:
+        border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+#list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#list li {
+    padding: 10px 5px;
+    border: 1px solid #eee;
+}
+
+#list li:nth-child(odd) {
+    background: #f2f2f2;
+}
+
+#list li:hover {
+    background: #fffed6;
+}
+
+#list li.hide {
+    display: none;
+}
+
+.tablaPersonas {
+    width: 100%;
+}
+
+.ABMpersonasEncabezado {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 2rem;
+    border-bottom-style: solid;
+    border-color: rgb(165, 167, 168);
+}
+
+.headerABM {
+    flex: 1;
+    text-align: center;
+}
+
+.tablaPersonas {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+.filaABM {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+
+.columnaABM {
+    flex: 1;
+}
+
+.modal .filaABM {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.tituloModal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
 }

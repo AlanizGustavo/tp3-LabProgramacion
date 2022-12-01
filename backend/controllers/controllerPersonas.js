@@ -15,14 +15,14 @@ const obtenerPersonas = async (req,res) => {
         .catch(error => {res.status(404).send({message: error, error: 'No se encontraron personas'})});
 }
 
-const eliminarPersona = async (req,res) => {
+const eliminarPersona = async (req, res) => {
     const id = req.params;
     await deletePersona(id)
         .then(response => {res.send(response)})
         .catch(error => {res.status(404).send({message: error, error: 'No Fue posible eliminar persona'})});
 }
 
-const editarPersona = async (req,res) => {
+const editarPersona = async (req, res) => {
     const id = req.params;
     const data = req.body;
     await editPersona(id,data)
@@ -32,4 +32,4 @@ const editarPersona = async (req,res) => {
 
 
 
-module.exports = {controllerPersona, obtenerPersonas, eliminarPersona, editarPersona};
+module.exports = { controllerPersona, obtenerPersonas, eliminarPersona, editarPersona };
