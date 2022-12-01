@@ -1,7 +1,7 @@
 {
   "name": "tp3-labprogramacion",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sitio web para el Club de Automoviles Antiguos, Clasicos y Especiales de la Patagonia (CAACEP)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/AlanizGustavo/tp3-LabProgramacion.git"
   },
-  "author": "",
+  "author": "Alaniz Gustavo y Bustamante Leonel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlanizGustavo/tp3-LabProgramacion/issues"
