@@ -7,7 +7,6 @@ const validacionCrearAuto = [
         .isLength({ min: 2, max: 50 }).withMessage('La marca debe tener al menos 2 caracteres')
         .matches(/^[a-zA-Z ]*$/).withMessage('La marca no puede contener simbolos'),
 
-
     body('modelo')
         .notEmpty().withMessage('El modelo es obligatorio')
         .isString().withMessage('El modelo debe ser un texto')
@@ -38,4 +37,5 @@ const validacionCrearAuto = [
         next();
     }
 ]
+
 module.exports = validacionCrearAuto;

@@ -22,4 +22,5 @@ const validacionCrearPersona = [
         next();
     }
 ]
-module.exports = { validacionPersona: validacionCrearPersona } 
+
+module.exports = validacionCrearPersona;
