@@ -272,7 +272,7 @@ svg {
     margin-right: 2rem;
 }
 
-.paginacion button:hover:not(.desactivado){
+.paginacion button:hover:not(.desactivado, .invisible){
     box-shadow: 0px 0px 15px 0px;
     cursor: pointer;
 }
@@ -286,6 +286,9 @@ svg {
     filter: grayscale(1);
 }
 
+.invisible{
+    opacity: 0;
+}
 
 
 .grid {
@@ -539,6 +542,7 @@ h2 {
     border-bottom-style: solid;
     border-color: rgb(204, 207, 209);
     border-width: 1px;
+    overflow: hidden;
 }
 
 .filaTabla div {
@@ -577,7 +581,7 @@ h2 {
     text-decoration-color: gray;
 }
 
-.tabla .contenedorImagen img {
+.contenedorImagen img {
     border-radius: 10px;
 }
 
@@ -721,6 +725,46 @@ h2 {
 
 /* MEDIA QUERYS */
 
+@media (max-width: 455px) {
+    .botonEditar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEditar svg{
+         width: 20px;
+         height: 20px;
+     }
+
+    .botonEliminar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEliminar svg{
+         width: 20px;
+         height: 20px;
+     }
+}    
+
+@media (min-width:455px) and (max-width:654px) {
+    .botonEditar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEditar svg{
+         width: 30px;
+         height: 30px;
+     }
+
+    .botonEliminar{
+        padding: 1.5rem;
+     }
+ 
+     .botonEliminar svg{
+         width: 30px;
+         height: 30px;
+     }
+} 
+
 @media (max-width: 654px) {
     .txtTop3 {
         padding-left: 0;
@@ -757,6 +801,10 @@ h2 {
         height: 100vh;
     }
 
+    .columnTablaAdmin .nombre {
+        font-size: 1.5rem;
+    }
+
 }
 
 @media (min-width:655px) and (max-width: 1600px) {
@@ -766,8 +814,13 @@ h2 {
     }
 
     .encabezadoTabla p {
-        font-size: 4rem;
+        font-size: 3rem;
     }
+
+    .columnTablaAdmin .nombre {
+        font-size: 1.8rem;
+    }
+
 }
 
 @media (max-width: 900px) {
@@ -962,7 +1015,7 @@ h2 {
 
 .columnTablaAdmin {
     width: 100%;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -994,19 +1047,39 @@ h2 {
 }
 
 .botonEditar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #47a386;
+    border: 0;
+    width: fit-content;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;;
+}
+
+.botonEditar svg {
+    fill: white;
+}
+
+.botonEliminar {
+    cursor: pointer;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  #FF385C;
     border: 0;
     width: fit-content;
     border-radius: 50%;
     color: #fff;
 }
 
-.botonEliminar {
-    background-color: #ffffff;
-    border: 0;
-    width: fit-content;
-    border-radius: 50%;
-    color: #fff;
+.botonEliminar svg {
+    fill: white;
+}
+
+.botonEditar:hover, .botonEliminar:hover{
+    box-shadow: 0px 0px 25px 0px rgb(0, 0, 0);
 }
 
 #searchBox {
