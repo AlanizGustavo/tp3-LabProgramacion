@@ -140,3 +140,5 @@ $ npm run start
 - [***Mongoose:***](https://mongoosejs.com/) Mongoose es una librería para Node.js que nos permite escribir consultas para una base de datos de MongooDB
 - [***Express-validator:***](https://express-validator.github.io/docs/) Es un conjunto de middlewares que envuelve las funciones de validación y sanitización de validator.js.
 - [***Multer:***](https://www.npmjs.com/package/multer) Middleware para el manejo de multipart/form-data que son usados principalmente para la subida de archivos
+- [***Informe de Laboratorio:***](https://www.canva.com/design/DAFM4xAwIaU/X6FzGLwGumu_VRPwEPPpRw/view?utm_content=DAFM4xAwIaU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) Informe de laboratorio 2022
+- [***Wireframe:***](https://whimsical.com/caacep-index-9dZySwoLNUY7cYUAjTa2kn) Wireframe utilizado para una maquetacion inicial del proyecto
