@@ -6,11 +6,7 @@ const crearPersona = async (data) => {
 }
 
 const getPersona = async (data) => {
-    try {
-        return await modeloPersona.find({});
-    } catch (error) {
-        throw new Error(error);
-    }
+    return await modeloPersona.find({});
 }
 
 const deletePersona = async (id) => {   

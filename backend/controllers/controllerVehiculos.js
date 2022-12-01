@@ -6,44 +6,61 @@ const filtrado = async (req, res) => {
     const cantidad = req.query.cantidad;
     const from = req.query.from;
     if(cantidad && from ){
-        res.send(await getCantidadVehiculos(cantidad,from));
+        await getCantidadVehiculos(cantidad,from)
+            .then(response => {res.send(response)})
+            .catch(error => {res.status(403).send({message: error, error: 'Error en parametros de filtrado'})});
     }
     else{
-        res.send(await getAllVehiculos());
+        await getAllVehiculos()
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(403).send({message: error, error: 'No se encontraron vehiculos '})});
     }
 };
 
 const posiciones = async (req, res) => {
-    res.send(await getTop3());
+    await getTop3()
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(404).send({message: error, error: 'No es posible obtener el top 3 de vehiculos'})});
 };
 
 const filtroNombre = async (req, res) => {
     const nombre = req.params.nombre;
-    res.send( await filtrarNombre(nombre));
-}
+    await filtrarNombre(nombre)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(404).send({message: error, error: 'No hay coincidencias con el nombre ingresado'})});
+}    
 
 const agregarVehiculo = async (req, res) => {
     await cargarImagen(req);
     eliminarImagen(req);
     const data = req.body;
-    res.send(await crearVehiculo(data));
+    await crearVehiculo(data)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(403).send({message: error, error: 'No es posible incorporar el vechiculo'})});
+    
 }
 
 const editarVehiculo = async (req, res) => {
     const id = req.params;
     const data = req.body;
-    res.send(await editVehiculo(id,data));
+    await editVehiculo(id,data)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(409).send({message: error, error: 'No es posible editar el vechiculo'})});
 
 }
 
 const eliminarVehiculo = async (req, res) => {
     const id = req.params;
-    res.send(await deleteVehiculo(id));
+    await deleteVehiculo(id)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(403).send({message: error, error: 'No fue posible eliminar el vechiculo'})});
 }
 
 const obtenerVehiculo = async (req, res) => {
     const id = req.params;
-    res.send(await getVehiculo(id));
+    await getVehiculo(id)
+        .then(response => {res.send(response)})
+        .catch(error => {res.status(404).send({message: error, error: 'Vehiculo no encontrado'})});
 }
 
 

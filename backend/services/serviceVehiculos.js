@@ -52,11 +52,8 @@ const getTop3 = async () => {
 }
 
 const crearVehiculo = async (data) => {
-    try {
-        return await modeloVehiculo.create(data);
-    } catch (error) {
-        throw new Error(error);
-    }
+    return await modeloVehiculo.create(data);
+    
 }
 
 const filtrarNombre = async (nombre) => {
@@ -120,17 +117,59 @@ const getVehiculo = async (id) => {
                 $match: {
                     '_id': new mongoose.mongo.ObjectId(id)
                 }
-            }
+            },
         ]
-    ).sort({puntaje: 'desc'})
+    ).sort({puntaje: 'desc'});
 }
 
 const editVehiculo = async (id, data) => {
     return await modeloVehiculo.findByIdAndUpdate({_id: new mongoose.mongo.ObjectId(id)},data);
 }
 
-const getCantidadVehiculos = async (cantidad, from) => {
-    return await modeloVehiculo.find({}).limit(cantidad).skip(from);
+const getCantidadVehiculos = async (cantidad, from) => {   
+    const page =  await modeloVehiculo.aggregate(
+        [
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'piloto',
+                        foreignField: '_id',
+                        as: 'piloto'
+                    }
+            },
+            {
+                $unwind:'$piloto'
+            }, 
+            {
+                $lookup:
+                    {
+                        from: 'personas',
+                        localField: 'copiloto',
+                        foreignField: '_id',
+                        as: 'copiloto'
+                    }
+            },
+            {
+                $unwind:'$copiloto'
+            },
+            {
+                $sort: {
+                    puntaje: -1
+                }
+            },
+            {
+                $skip: +from
+            }, 
+            {
+                $limit: +cantidad
+            }
+        ]
+    );
+
+    const totalPage = await modeloVehiculo.countDocuments();
+    return {totalElements : totalPage,
+    data: page}
 }
 
 module.exports = {getAllVehiculos, getTop3, crearVehiculo, filtrarNombre, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos};
