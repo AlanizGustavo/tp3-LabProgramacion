@@ -1,4 +1,6 @@
 const {getAllVehiculos, crearVehiculo, filtrarNombre, getTop3, deleteVehiculo, editVehiculo, getVehiculo, getCantidadVehiculos} = require('../services/serviceVehiculos');
+const cargarImagen = require('../utils/cargarImagenSv');
+const eliminarImagen = require('../utils/eliminarImagen');
 
 
 const filtrado = async (req, res) => {
@@ -30,6 +32,8 @@ const filtroNombre = async (req, res) => {
 }    
 
 const agregarVehiculo = async (req, res) => {
+    await cargarImagen(req);
+    eliminarImagen(req);
     const data = req.body;
     await crearVehiculo(data)
         .then(response => {res.send(response)})
