@@ -44,7 +44,7 @@ const agregarCards = (element,index) => {
                             <p>${puesto(index)}</p>
                         </div>
                         <div class="contenedorImagen">
-                            <img class="img" src="../.${element.foto}">
+                            <img class="img" src="${element.foto}">
                         </div>
                         <div>
                             <p class="nombre">${element.piloto.nombre}</p>
