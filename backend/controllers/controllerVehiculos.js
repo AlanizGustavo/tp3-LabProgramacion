@@ -31,8 +31,10 @@ const filtroNombre = async (req, res) => {
 }
 
 const agregarVehiculo = async (req, res) => {
-    await cargarImagen(req);
-    eliminarImagen(req);
+    if(req.file != undefined){
+        await cargarImagen(req);
+        eliminarImagen(req);
+    }
     const data = req.body;
     await crearVehiculo(data)
         .then(response => {res.send(response)})
