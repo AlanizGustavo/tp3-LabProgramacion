@@ -3,9 +3,9 @@ const { controllerPersona, obtenerPersonas, eliminarPersona, editarPersona } = r
 
 const router = express.Router();
 
-router.patch('/api/personas/editarPersona/:id', editarPersona);         /* datos ingresados exv */
-router.post('/api/personas/crearPersona', controllerPersona);           /* mismo */
-router.delete('/api/personas/eliminarPersona/:id', eliminarPersona);    /* id correcto */
+router.patch('/api/personas/editarPersona/:id', editarPersona);
+router.post('/api/personas/crearPersona', controllerPersona);
+router.delete('/api/personas/eliminarPersona/:id', eliminarPersona);
 router.get('/api/personas', obtenerPersonas)
 
 
